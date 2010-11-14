@@ -1,15 +1,4 @@
-<%= form_for(@brew) do |f| %>
-  <% if @brew.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@brew.errors.count, "error") %> prohibited this brew from being saved:</h2>
-
-      <ul>
-      <% @brew.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for([@brewery, @brewery.brews.build]) do |f| %>
 
   <div class="field">
     <%= f.label :name %><br />
@@ -34,10 +23,6 @@
   <div class="field">
     <%= f.label :boil_time_minutes %><br />
     <%= f.text_field :boil_time_minutes %>
-  </div>
-  <div class="field">
-    <%= f.label :brewery %><br />
-    <%= f.text_field :brewery %>
   </div>
   <div class="actions">
     <%= f.submit %>

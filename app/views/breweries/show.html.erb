@@ -31,48 +31,13 @@
 
 <table>
   <% @brewery.brews.each do |brew| %>
-  <tr>
-    <td><%= brew.name %></td>
-    <td><%= brew.brewer %></td>
-    <td><%= link_to 'Show', brew %></td>
-    <td><%= link_to 'Edit', edit_brew_path(brew) %></td>
-    <td><%= link_to 'Destroy', brew, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+    <%= render brew %>
+  <% end %>
 </table>
 <br />
 
 <h4>Add a new recipe:</h4>
-<%= form_for([@brewery, @brewery.brews.create]) do |f| %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :brewer %><br />
-    <%= f.text_field :brewer %>
-  </div>
-  <div class="field">
-    <%= f.label :original_gravity %><br />
-    <%= f.text_field :original_gravity %>
-  </div>
-  <div class="field">
-    <%= f.label :final_gravity %><br />
-    <%= f.text_field :final_gravity %>
-  </div>
-  <div class="field">
-    <%= f.label :fermentation_volume_litres %><br />
-    <%= f.text_field :fermentation_volume_litres %>
-  </div>
-  <div class="field">
-    <%= f.label :boil_time_minutes %><br />
-    <%= f.text_field :boil_time_minutes %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<%= render "brews/form" %>
 
 
 

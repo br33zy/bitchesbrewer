@@ -77,12 +77,10 @@ class BrewsController < ApplicationController
   # DELETE /brews/1
   # DELETE /brews/1.xml
   def destroy
-    @brew = Brew.find(params[:id])
+    @brewery = Brewery.find(params[:brewery_id])
+    @brew = @brewery.brews.find(params[:id])
     @brew.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(brews_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to brewery_path(@brewery)
   end
 end

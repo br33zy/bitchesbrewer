@@ -254,3 +254,17 @@ vendor
   External libraries that the application depends on. Also includes the plugins
   subdirectory. If the app has frozen rails, those gems also go here, under
   vendor/rails/. This directory is in the load path.
+  547  rails generate scaffold Brewery name:string head_brewer:string mash_efficiency:float volume_lost_to_mash_litres_per_kg:float kettle_tax_litres:float
+  554  rails generate scaffold Brew name:string brewer:string original_gravity:float final_gravity:float fermentation_volume_litres:float boil_time_minutes:integer
+  573  rails generate controller Brews
+  574  rails generate controller Breweries
+  576  rails generate view Breweries
+  580  rails generate model Brewery name:string head_brewer:string mash_efficiency:float volume_lost_to_mash_litres_per_kg:float kettle_tax_litres:float
+  581  rails generate model Brew name:string brewer:string original_gravity:float final_gravity:float fermentation_volume_litres:float boil_time_minutes:integer brewery:references
+  582  rails generate controller Breweries
+  583  rails generate controller Brews
+  588  rails generate scaffold Brew name:string brewer:string original_gravity:float final_gravity:float fermentation_volume_litres:float boil_time_minutes:integer brewery:references
+  590  rails generate scaffold Brew name:string brewer:string original_gravity:float final_gravity:float fermentation_volume_litres:float boil_time_minutes:integer brewery:references
+  595  rails generate scaffold Brew name:string brewer:string original_gravity:float final_gravity:float fermentation_volume_litres:float boil_time_minutes:integer brewery:references
+  649  history | grep 'rails generate'
+  650  history | grep 'rails generate' >> README
