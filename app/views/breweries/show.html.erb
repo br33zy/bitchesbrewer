@@ -25,6 +25,9 @@
   <%= @brewery.kettle_tax_litres %>
 </p>
 
+<%= link_to 'Edit', edit_brewery_path(@brewery) %> |
+<%= link_to 'Back', breweries_path %>
+
 <hr>
 
 <h3>brew recipes:</h3>
@@ -39,7 +42,3 @@
 <h4>Add a new recipe:</h4>
 <%= render "brews/form" %>
 
-
-
-<%= link_to 'Edit', edit_brewery_path(@brewery) %> |
-<%= link_to 'Back', breweries_path %>
