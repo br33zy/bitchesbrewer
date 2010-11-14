@@ -32,7 +32,7 @@
 
 <p>
   <b>Brewery:</b>
-  <%= @brew.brewery %>
+  <%= link_to @brew.brewery.name, brewery_path(@brew.brewery) %>
 </p>
 
 

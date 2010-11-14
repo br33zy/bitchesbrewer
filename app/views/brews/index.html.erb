@@ -22,7 +22,7 @@
     <td><%= brew.final_gravity %></td>
     <td><%= brew.fermentation_volume_litres %></td>
     <td><%= brew.boil_time_minutes %></td>
-    <td><%= brew.brewery %></td>
+    <td><%= link_to brew.brewery.name, brewery_path(brew.brewery) %></td>
     <td><%= link_to 'Show', brew %></td>
     <td><%= link_to 'Edit', edit_brew_path(brew) %></td>
     <td><%= link_to 'Destroy', brew, :confirm => 'Are you sure?', :method => :delete %></td>

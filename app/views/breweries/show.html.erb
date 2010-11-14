@@ -25,7 +25,9 @@
   <%= @brewery.kettle_tax_litres %>
 </p>
 
-<h2>brew recipes</h2>
+<hr>
+
+<h3>brew recipes:</h3>
 
 <table>
   <% @brewery.brews.each do |brew| %>
@@ -40,6 +42,7 @@
 </table>
 <br />
 
+<h4>Add a new recipe:</h4>
 <%= form_for([@brewery, @brewery.brews.create]) do |f| %>
 
   <div class="field">
