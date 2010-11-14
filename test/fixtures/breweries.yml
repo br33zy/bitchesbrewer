@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  head_brewer: MyString
+  mash_efficiency_percentage: 1.5
+  volume_lost_to_mash_litres_per_kg: 1.5
+  kettle_tax_litres: 1.5
+
+two:
+  name: MyString
+  head_brewer: MyString
+  mash_efficiency_percentage: 1.5
+  volume_lost_to_mash_litres_per_kg: 1.5
+  kettle_tax_litres: 1.5

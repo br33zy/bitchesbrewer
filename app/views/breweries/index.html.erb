@@ -1,0 +1,31 @@
+<h1>Listing breweries</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Head brewer</th>
+    <th>Mash efficiency percentage</th>
+    <th>Volume lost to mash litres per kg</th>
+    <th>Kettle tax litres</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @breweries.each do |brewery| %>
+  <tr>
+    <td><%= brewery.name %></td>
+    <td><%= brewery.head_brewer %></td>
+    <td><%= brewery.mash_efficiency_percentage %></td>
+    <td><%= brewery.volume_lost_to_mash_litres_per_kg %></td>
+    <td><%= brewery.kettle_tax_litres %></td>
+    <td><%= link_to 'Show', brewery %></td>
+    <td><%= link_to 'Edit', edit_brewery_path(brewery) %></td>
+    <td><%= link_to 'Destroy', brewery, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Brewery', new_brewery_path %>

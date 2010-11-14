@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @brew.name %>
+</p>
+
+<p>
+  <b>Brewer:</b>
+  <%= @brew.brewer %>
+</p>
+
+<p>
+  <b>Original gravity:</b>
+  <%= @brew.original_gravity %>
+</p>
+
+<p>
+  <b>Final gravity:</b>
+  <%= @brew.final_gravity %>
+</p>
+
+<p>
+  <b>Fermentation volume litres:</b>
+  <%= @brew.fermentation_volume_litres %>
+</p>
+
+<p>
+  <b>Boil time minutes:</b>
+  <%= @brew.boil_time_minutes %>
+</p>
+
+<p>
+  <b>Brewery:</b>
+  <%= @brew.brewery %>
+</p>
+
+
+<%= link_to 'Edit', edit_brew_path(@brew) %> |
+<%= link_to 'Back', brews_path %>

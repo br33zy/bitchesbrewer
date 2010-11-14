@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @brewery.name %>
+</p>
+
+<p>
+  <b>Head brewer:</b>
+  <%= @brewery.head_brewer %>
+</p>
+
+<p>
+  <b>Mash efficiency percentage:</b>
+  <%= @brewery.mash_efficiency_percentage %>
+</p>
+
+<p>
+  <b>Volume lost to mash litres per kg:</b>
+  <%= @brewery.volume_lost_to_mash_litres_per_kg %>
+</p>
+
+<p>
+  <b>Kettle tax litres:</b>
+  <%= @brewery.kettle_tax_litres %>
+</p>
+
+<h2>brew recipes</h2>
+
+<table>
+  <% @brewery.brews.each do |brew| %>
+  <tr>
+    <td><%= brew.name %></td>
+    <td><%= brew.brewer %></td>
+    <td><%= link_to 'Show', brew %></td>
+    <td><%= link_to 'Edit', edit_brew_path(brew) %></td>
+    <td><%= link_to 'Destroy', brew, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= form_for([@brewery, @brewery.brews.create]) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :brewer %><br />
+    <%= f.text_field :brewer %>
+  </div>
+  <div class="field">
+    <%= f.label :original_gravity %><br />
+    <%= f.text_field :original_gravity %>
+  </div>
+  <div class="field">
+    <%= f.label :final_gravity %><br />
+    <%= f.text_field :final_gravity %>
+  </div>
+  <div class="field">
+    <%= f.label :fermentation_volume_litres %><br />
+    <%= f.text_field :fermentation_volume_litres %>
+  </div>
+  <div class="field">
+    <%= f.label :boil_time_minutes %><br />
+    <%= f.text_field :boil_time_minutes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+
+<%= link_to 'Edit', edit_brewery_path(@brewery) %> |
+<%= link_to 'Back', breweries_path %>

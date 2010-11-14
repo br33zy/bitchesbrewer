@@ -1,0 +1,37 @@
+<%= form_for(@brewery) do |f| %>
+  <% if @brewery.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@brewery.errors.count, "error") %> prohibited this brewery from being saved:</h2>
+
+      <ul>
+      <% @brewery.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :head_brewer %><br />
+    <%= f.text_field :head_brewer %>
+  </div>
+  <div class="field">
+    <%= f.label :mash_efficiency_percentage %><br />
+    <%= f.text_field :mash_efficiency_percentage %>
+  </div>
+  <div class="field">
+    <%= f.label :volume_lost_to_mash_litres_per_kg %><br />
+    <%= f.text_field :volume_lost_to_mash_litres_per_kg %>
+  </div>
+  <div class="field">
+    <%= f.label :kettle_tax_litres %><br />
+    <%= f.text_field :kettle_tax_litres %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

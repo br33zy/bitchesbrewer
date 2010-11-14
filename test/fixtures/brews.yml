@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  brewer: MyString
+  original_gravity: 1.5
+  final_gravity: 1.5
+  fermentation_volume_litres: 1.5
+  boil_time_minutes: 1
+  brewery: 
+
+two:
+  name: MyString
+  brewer: MyString
+  original_gravity: 1.5
+  final_gravity: 1.5
+  fermentation_volume_litres: 1.5
+  boil_time_minutes: 1
+  brewery: 
