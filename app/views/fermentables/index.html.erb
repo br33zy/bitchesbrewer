@@ -1,0 +1,31 @@
+<h1>Listing fermentables</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Mash</th>
+    <th>Points per kg per litre</th>
+    <th>Weight in kg</th>
+    <th>Brew</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fermentables.each do |fermentable| %>
+  <tr>
+    <td><%= fermentable.name %></td>
+    <td><%= fermentable.mash %></td>
+    <td><%= fermentable.points_per_kg_per_litre %></td>
+    <td><%= fermentable.weight_in_kg %></td>
+    <td><%= link_to fermentable.brew.name, brew_path(fermentable.brew) %></td>
+    <td><%= link_to 'Show', fermentable %></td>
+    <td><%= link_to 'Edit', edit_brew_fermentable_path(fermentable.brew, fermentable) %></td>
+    <td><%= link_to 'Destroy', fermentable, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Fermentable', new_fermentable_path %>

@@ -1,5 +1,9 @@
 Bitchesbrewer::Application.routes.draw do
-  resources :brews
+  resources :fermentables
+
+  resources :brews do
+    resources :fermentables
+  end
 
   resources :breweries do
     resources :brews

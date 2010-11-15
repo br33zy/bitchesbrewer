@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  mash: false
+  points_per_kg_per_litre: 1.5
+  weight_in_kg: 1.5
+  brew: 
+
+two:
+  name: MyString
+  mash: false
+  points_per_kg_per_litre: 1.5
+  weight_in_kg: 1.5
+  brew: 

@@ -38,3 +38,17 @@
 
 <%= link_to 'Edit', edit_brew_path(@brew) %> |
 <%= link_to 'Back', brews_path %>
+<hr />
+
+
+<h3>fermentables:</h3>
+
+<table>
+  <% @brew.fermentables.each do |fermentable| %>
+    <%= render fermentable %>
+  <% end %>
+</table>
+
+<h4>Add a new fermentable:</h4>
+<%= render "fermentables/form" %>
+

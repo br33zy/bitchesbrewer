@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @fermentable.name %>
+</p>
+
+<p>
+  <b>Mash:</b>
+  <%= @fermentable.mash %>
+</p>
+
+<p>
+  <b>Points per kg per litre:</b>
+  <%= @fermentable.points_per_kg_per_litre %>
+</p>
+
+<p>
+  <b>Weight in kg:</b>
+  <%= @fermentable.weight_in_kg %>
+</p>
+
+<p>
+  <b>Brew:</b>
+  <%= link_to @fermentable.brew.name, brew_path(@fermentable.brew) %>
+</p>
+
+
+<%= link_to 'Edit', edit_brew_fermentable_path(@fermentable.brew, @fermentable) %> |
+<%= link_to 'Back', brew_path(@fermentable.brew) %>

@@ -2,6 +2,6 @@
   <td><%= brew.name %></td>
   <td><%= brew.brewer %></td>
   <td><%= link_to 'Show', brew %></td>
-  <td><%= link_to 'Edit', edit_brew_path(brew) %></td>
+  <td><%= link_to 'Edit', edit_brewery_brew_path(brew.brewery, brew) %></td>
   <td><%= link_to 'Destroy', [brew.brewery, brew], :confirm => 'Are you sure?', :method => :delete %></td>
 </tr>

@@ -32,30 +32,20 @@ class BrewsController < ApplicationController
     end
   end
 
-  # GET /brews/1/edit
+  # GET /breweries/:brewery_id/brews/:id/edit(.:format)
   def edit
-    @brew = Brew.find(params[:id])
+    @brewery = Brewery.find(params[:brewery_id])
+    @brew = @brewery.brews.find(params[:id])
   end
 
   # POST /brews
   # POST /brews.xml
-
-
   def create
     @brewery = Brewery.find(params[:brewery_id])
     @brew = @brewery.brews.create(params[:brew])
 
     redirect_to brewery_path(@brewery)
 
-#    respond_to do |format|
-#      if @brew.save
-#        format.html { redirect_to(@brew, :notice => 'Brew was successfully created.') }
-#        format.xml  { render :xml => @brew, :status => :created, :location => @brew }
-#      else
-#        format.html { render :action => "new" }
-#        format.xml  { render :xml => @brew.errors, :status => :unprocessable_entity }
-#      end
-#    end
   end
 
   # PUT /brews/1

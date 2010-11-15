@@ -1,0 +1,22 @@
+<%= form_for([@brew, @brew.fermentables.build]) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :mash %><br />
+    <%= f.check_box :mash %>
+  </div>
+  <div class="field">
+    <%= f.label :points_per_kg_per_litre %><br />
+    <%= f.text_field :points_per_kg_per_litre %>
+  </div>
+  <div class="field">
+    <%= f.label :weight_in_kg %><br />
+    <%= f.text_field :weight_in_kg %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
