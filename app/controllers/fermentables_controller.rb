@@ -10,10 +10,12 @@ class FermentablesController < ApplicationController
     end
   end
 
-  # GET /fermentables/1
+  # GET /breweries/:brewery_id/brews/:brew_id/fermentables/:id(.:format)
   # GET /fermentables/1.xml
   def show
-    @fermentable = Fermentable.find(params[:id])
+    @brewery = Brewery.find(params[:brewery_id])
+    @brew = @brewery.brews.find(params[:brew_id])
+    @fermentable = @brew.fermentables.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,26 +36,30 @@ class FermentablesController < ApplicationController
 
   # GET /brews/:brew_id/fermentables/:id/edit(.:format)
   def edit
-    @brew = Brew.find(params[:brew_id])
+    @brewery = Brewery.find(params[:brewery_id])
+    @brew = @brewery.brews.find(params[:brew_id])
     @fermentable = @brew.fermentables.find(params[:id])
   end
 
-  # POST /brews/:brew_id/fermentables(.:format)
+  # POST /breweries/:brewery_id/brews/:brew_id/fermentables(.:format)
   def create
-    @brew = Brew.find(params[:brew_id])
+    @brewery = Brewery.find(params[:brewery_id])
+    @brew = @brewery.brews.find(params[:brew_id])
     @fermentable = @brew.fermentables.create(params[:fermentable])
 
-    redirect_to brew_path(@brew)
+    redirect_to brewery_brew_path(@brewery, @brew)
   end
 
   # PUT /fermentables/1
   # PUT /fermentables/1.xml
   def update
-    @fermentable = Fermentable.find(params[:id])
+    @brewery = Brewery.find(params[:brewery_id])
+    @brew = @brewery.brews.find(params[:brew_id])
+    @fermentable = @brew.fermentables.find(params[:id])
 
     respond_to do |format|
       if @fermentable.update_attributes(params[:fermentable])
-        format.html { redirect_to(@fermentable.brew, :notice => 'Fermentable was successfully updated.') }
+        format.html { redirect_to(brewery_brew_path(@brewery, @brew), :notice => 'Fermentable was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

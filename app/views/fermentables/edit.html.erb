@@ -2,5 +2,5 @@
 
 <%= render 'form_edit' %>
 
-<%= link_to 'Show', @fermentable %> |
-<%= link_to 'Back', brew_path(@fermentable.brew) %>
+<%= link_to 'Show', brewery_brew_fermentable_path(@fermentable.brew.brewery, @fermentable.brew, @fermentable) %> |
+<%= link_to 'Back', brewery_brew_path(@fermentable.brew.brewery, @fermentable.brew) %>

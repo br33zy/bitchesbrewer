@@ -10,9 +10,10 @@ class BrewsController < ApplicationController
     end
   end
 
-  # GET /brews/1
+  # GET /breweries/:brewery_id/brews/:id(.:format)
   # GET /brews/1.xml
   def show
+    @brewery = Brewery.find(params[:brewery_id])
     @brew = Brew.find(params[:id])
 
     respond_to do |format|
@@ -48,14 +49,15 @@ class BrewsController < ApplicationController
 
   end
 
-  # PUT /brews/1
+  # PUT /breweries/:brewery_id/brews/:id(.:format)
   # PUT /brews/1.xml
   def update
-    @brew = Brew.find(params[:id])
+    @brewery = Brewery.find(params[:brewery_id])    
+    @brew = @brewery.brews.find(params[:id])
 
     respond_to do |format|
       if @brew.update_attributes(params[:brew])
-        format.html { redirect_to(@brew, :notice => 'Brew was successfully updated.') }
+        format.html { redirect_to(brewery_brew_path(@brewery, @brew), :notice => 'Brew was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

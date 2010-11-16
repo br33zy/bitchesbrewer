@@ -3,7 +3,7 @@
   <td><%= fermentable.mash %></td>
   <td><%= fermentable.points_per_kg_per_litre %></td>
   <td><%= fermentable.weight_in_kg %></td>
-  <td><%= link_to 'Show', fermentable %></td>
-  <td><%= link_to 'Edit', edit_brew_fermentable_path(fermentable.brew, fermentable) %></td>
-  <td><%= link_to 'Destroy', [fermentable.brew, fermentable], :confirm => 'Are you sure?', :method => :delete %></td>
+  <td><%= link_to 'Show', brewery_brew_fermentable_path(fermentable.brew.brewery, fermentable.brew, fermentable) %></td>
+  <td><%= link_to 'Edit', edit_brewery_brew_fermentable_path(fermentable.brew.brewery, fermentable.brew, fermentable) %></td>
+  <td><%= link_to 'Destroy', [fermentable.brew.brewery, fermentable.brew, fermentable], :confirm => 'Are you sure?', :method => :delete %></td>
 </tr>

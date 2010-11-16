@@ -1,12 +1,12 @@
 Bitchesbrewer::Application.routes.draw do
-  resources :fermentables
+#  resources :fermentables
 
-  resources :brews do
-    resources :fermentables
-  end
+#  resources :brews
 
   resources :breweries do
-    resources :brews
+    resources :brews do
+      resources :fermentables
+    end
   end
 
   # The priority is based upon order of creation:
