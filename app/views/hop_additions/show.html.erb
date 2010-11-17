@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @hop_addition.name %>
+</p>
+
+<p>
+  <b>Alpha acid percentage:</b>
+  <%= @hop_addition.alpha_acid_percentage %>
+</p>
+
+<p>
+  <b>Weight grams:</b>
+  <%= @hop_addition.weight_grams %>
+</p>
+
+<p>
+  <b>Boil time minutes:</b>
+  <%= @hop_addition.boil_time_minutes %>
+</p>
+
+<p>
+  <b>Brew:</b>
+  <%= link_to @hop_addition.brew.name, brewery_brew_path(@hop_addition.brew.brewery, @hop_addition.brew) %>
+</p>
+
+
+<%= link_to 'Edit', edit_brewery_brew_hop_addition_path(@hop_addition.brew.brewery, @hop_addition.brew, @hop_addition) %> |
+<%= link_to 'Back', brewery_brew_path(@hop_addition.brew.brewery, @hop_addition.brew) %>

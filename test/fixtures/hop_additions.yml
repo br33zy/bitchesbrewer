@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  alpha_acid_percentage: 1.5
+  weight_grams: 1.5
+  boil_time_minutes: 1.5
+  brew: 
+
+two:
+  name: MyString
+  alpha_acid_percentage: 1.5
+  weight_grams: 1.5
+  boil_time_minutes: 1.5
+  brew: 

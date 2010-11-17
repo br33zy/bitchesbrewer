@@ -1,11 +1,8 @@
 Bitchesbrewer::Application.routes.draw do
-#  resources :fermentables
-
-#  resources :brews
 
   resources :breweries do
     resources :brews do
-      resources :fermentables
+      resources :fermentables, :hop_additions
     end
   end
 

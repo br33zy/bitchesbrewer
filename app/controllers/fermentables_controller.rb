@@ -50,7 +50,7 @@ class FermentablesController < ApplicationController
     redirect_to brewery_brew_path(@brewery, @brew)
   end
 
-  # PUT /fermentables/1
+  # PUT /breweries/:brewery_id/brews/:brew_id/fermentables/:id(.:format)
   # PUT /fermentables/1.xml
   def update
     @brewery = Brewery.find(params[:brewery_id])
@@ -71,10 +71,11 @@ class FermentablesController < ApplicationController
   # DELETE /fermentables/1
   # DELETE /fermentables/1.xml
   def destroy
-    @brew = Brew.find(params[:brew_id])
+    @brewery = Brewery.find(params[:brewery_id])
+    @brew = @brewery.brews.find(params[:brew_id])
     @fermentable = @brew.fermentables.find(params[:id])
     @fermentable.destroy
 
-    redirect_to brew_path(@brew)
+    redirect_to brewery_brew_path(@brewery, @brew)
   end
 end

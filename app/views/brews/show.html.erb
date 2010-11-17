@@ -35,11 +35,9 @@
   <%= link_to @brew.brewery.name, brewery_path(@brew.brewery) %>
 </p>
 
-
 <%= link_to 'Edit', edit_brewery_brew_path(@brew.brewery, @brew) %> |
 <%= link_to 'Back', brewery_path(@brew.brewery) %>
 <hr />
-
 
 <h3>fermentables:</h3>
 
@@ -52,3 +50,13 @@
 <h4>Add a new fermentable:</h4>
 <%= render "fermentables/form" %>
 
+<h3>hop additions:</h3>
+
+<table>
+  <% @brew.hop_additions.each do |hop_addition| %>
+    <%= render hop_addition %>
+  <% end %>
+</table>
+
+<h4>Add a new hop addition:</h4>
+<%= render "hop_additions/form" %>

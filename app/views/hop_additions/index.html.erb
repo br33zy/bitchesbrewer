@@ -1,0 +1,31 @@
+<h1>Listing hop_additions</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Alpha acid percentage</th>
+    <th>Weight grams</th>
+    <th>Boil time minutes</th>
+    <th>Brew</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @hop_additions.each do |hop_addition| %>
+  <tr>
+    <td><%= hop_addition.name %></td>
+    <td><%= hop_addition.alpha_acid_percentage %></td>
+    <td><%= hop_addition.weight_grams %></td>
+    <td><%= hop_addition.boil_time_minutes %></td>
+    <td><%= hop_addition.brew %></td>
+    <td><%= link_to 'Show', hop_addition %></td>
+    <td><%= link_to 'Edit', edit_hop_addition_path(hop_addition) %></td>
+    <td><%= link_to 'Destroy', hop_addition, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Hop addition', new_hop_addition_path %>

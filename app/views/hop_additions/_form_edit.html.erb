@@ -1,0 +1,21 @@
+<%= form_for([@brewery, @brew, @hop_addition]) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :alpha_acid_percentage %><br />
+    <%= f.text_field :alpha_acid_percentage %>
+  </div>
+  <div class="field">
+    <%= f.label :weight_grams %><br />
+    <%= f.text_field :weight_grams %>
+  </div>
+  <div class="field">
+    <%= f.label :boil_time_minutes %><br />
+    <%= f.text_field :boil_time_minutes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
