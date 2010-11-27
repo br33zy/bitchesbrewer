@@ -1,0 +1,14 @@
+<p>
+  <b>Brewery: </b><%= link_to @brew.brewery.name, brewery_path(@brew.brewery) %><br />
+  <b>Head brewer: </b><%= @brewery.head_brewer %>
+</p>
+
+<p>
+  <b>Mash efficiency percentage: </b><%= @brewery.mash_efficiency_percentage %><br />
+  <b>Volume lost to mash litres per kg: </b><%= @brewery.volume_lost_to_mash_litres_per_kg %><br />
+  <b>Kettle tax litres: </b><%= @brewery.kettle_tax_litres %>
+</p>
+
+<%= link_to 'Edit', edit_brewery_path(@brewery) %> |
+<%= link_to 'Back', breweries_path %>
+

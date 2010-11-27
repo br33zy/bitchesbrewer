@@ -6,7 +6,14 @@ gem 'rails', '3.0.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql'
-gem 'zymurgy'
+gem 'zymurgy', :path => '/Users/mbreeze/dev/zymurgy'
+gem 'flutie'
+
+group :development, :test do
+  gem 'rspec', '~> 2.1.0'
+  gem "rspec-rails", '~> 2.1.0'
+  gem 'autotest'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'

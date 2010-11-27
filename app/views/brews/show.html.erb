@@ -1,62 +1,56 @@
-<p id="notice"><%= notice %></p>
+<div class="span-19 colborder" id="content">
+  <h2 class="prepend-5 prepend-top"><%= @brew.name %></h2>
 
-<p>
-  <b>Name:</b>
-  <%= @brew.name %>
-</p>
+  <blockquote class="prepend-5">A beer-style by <%= @brew.brewer %></blockquote>
 
-<p>
-  <b>Brewer:</b>
-  <%= @brew.brewer %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Original gravity:</b>
-  <%= @brew.original_gravity %>
-</p>
+  <div class="span-6 colborder">
+    <%= render @brewery %>
+  </div>
 
-<p>
-  <b>Final gravity:</b>
-  <%= @brew.final_gravity %>
-</p>
+  <div class="span-12 last">
 
-<p>
-  <b>Fermentation volume litres:</b>
-  <%= @brew.fermentation_volume_litres %>
-</p>
+    <table width="300">
+      <tr><th scope="row">Original gravity: </th><td><%= @brew.original_gravity %></td></tr>
+      <tr><th scope="row">Final gravity: </th><td><%= @brew.final_gravity %></td></tr>
+      <tr><th scope="row">Est. ABV%: </th><td class="calc"><%= number_with_precision(@brew.alcohol_by_volume, :precision => 1) %>%</td></tr>
+    </table>
 
-<p>
-  <b>Boil time minutes:</b>
-  <%= @brew.boil_time_minutes %>
-</p>
+    <p>
+      <b>Fermentation volume litres: </b><%= @brew.fermentation_volume_litres %><br/>
+      <b>Boil time minutes: </b><%= @brew.boil_time_minutes %>
+    </p>
 
-<p>
-  <b>Brewery:</b>
-  <%= link_to @brew.brewery.name, brewery_path(@brew.brewery) %>
-</p>
 
-<%= link_to 'Edit', edit_brewery_brew_path(@brew.brewery, @brew) %> |
-<%= link_to 'Back', brewery_path(@brew.brewery) %>
-<hr />
+    <%= link_to 'Edit', edit_brewery_brew_path(@brew.brewery, @brew) %> |
+    <%= link_to 'Back', brewery_path(@brew.brewery) %>
+  </div>
+  <hr/>
+  <div class="span-9 colborder">
+    <h4 class="prepend-2">fermentables:</h4>
 
-<h3>fermentables:</h3>
+    <table>
+      <% @brew.fermentables.each do |fermentable| %>
+          <%= render fermentable %>
+      <% end %>
+    </table>
 
-<table>
-  <% @brew.fermentables.each do |fermentable| %>
-    <%= render fermentable %>
-  <% end %>
-</table>
+    <h4>Add a new fermentable:</h4>
+    <%= render "fermentables/form" %>
 
-<h4>Add a new fermentable:</h4>
-<%= render "fermentables/form" %>
+  </div>
+  <div class="span-9 last">
+    <h4 class="prepend-2">hop additions:</h4>
 
-<h3>hop additions:</h3>
+    <table>
+      <% @brew.hop_additions.each do |hop_addition| %>
+          <%= render hop_addition %>
+      <% end %>
+    </table>
 
-<table>
-  <% @brew.hop_additions.each do |hop_addition| %>
-    <%= render hop_addition %>
-  <% end %>
-</table>
+    <h4>Add a new hop addition:</h4>
+    <%= render "hop_additions/form" %>
+  </div>
 
-<h4>Add a new hop addition:</h4>
-<%= render "hop_additions/form" %>
+</div>
