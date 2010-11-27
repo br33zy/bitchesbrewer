@@ -291,7 +291,7 @@ tr.odd {
   }
 th {
     /*background:#839965;*/
-    background:rgb(160, 160, 160);
+    /*background:rgb(160, 160, 160);*/
   }
 caption, tfoot {
   font-family:georgia, "times new roman", serif;
@@ -318,13 +318,11 @@ thead tr th:first-child {
   text-align:right;
   padding-right:1.5em;
   }
-tbody th {
+tbody tr th {
   padding:0 5px 0 5px;
-  border-right:1px solid #fff;
-  border-top:1px solid #000;
+  /*border-right:1px solid #000;*/
+  /*border-top:1px solid #000;*/
   vertical-align:middle;
-  }
-tbody tr.odd th {
   border-right:1px solid #eee;
   }
 tbody td {

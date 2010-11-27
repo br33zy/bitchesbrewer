@@ -12,9 +12,11 @@
   <div class="span-12 last">
 
     <table width="300">
-      <tr><th scope="row">Original gravity: </th><td><%= @brew.original_gravity %></td></tr>
-      <tr><th scope="row">Final gravity: </th><td><%= @brew.final_gravity %></td></tr>
-      <tr><th scope="row">Est. ABV%: </th><td class="calc"><%= number_with_precision(@brew.alcohol_by_volume, :precision => 1) %>%</td></tr>
+      <tbody>
+      <tr><th>Original gravity: </th><td><%= @brew.original_gravity %></td></tr>
+      <tr><th>Final gravity: </th><td><%= @brew.final_gravity %></td></tr>
+      <tr><th>Est. ABV%: </th><td class="calc"><%= number_with_precision(@brew.alcohol_by_volume, :precision => 1) %>%</td></tr>
+  </tbody>
     </table>
 
     <p>
