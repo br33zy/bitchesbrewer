@@ -15,6 +15,7 @@ class BrewsController < ApplicationController
   def show
     @brewery = Brewery.find(params[:brewery_id])
     @brew = Brew.find(params[:id])
+    @fermentables = @brew.fermentables.all
 
     respond_to do |format|
       format.html # show.html.erb

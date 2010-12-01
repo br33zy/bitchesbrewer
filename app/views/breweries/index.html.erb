@@ -6,6 +6,7 @@
     <th>Head brewer</th>
     <th>Mash efficiency percentage</th>
     <th>Volume lost to mash litres per kg</th>
+    <th>Boil evaporation rate litres per hour</th>
     <th>Kettle tax litres</th>
     <th></th>
     <th></th>
@@ -18,6 +19,7 @@
     <td><%= brewery.head_brewer %></td>
     <td><%= brewery.mash_efficiency_percentage %></td>
     <td><%= brewery.volume_lost_to_mash_litres_per_kg %></td>
+    <td><%= brewery.evaporation_rate_litres_per_hour %></td>
     <td><%= brewery.kettle_tax_litres %></td>
     <td><%= link_to 'Show', brewery %></td>
     <td><%= link_to 'Edit', edit_brewery_path(brewery) %></td>

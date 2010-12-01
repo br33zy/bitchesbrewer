@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20101117105923) do
     t.string   "head_brewer"
     t.float    "mash_efficiency_percentage"
     t.float    "volume_lost_to_mash_litres_per_kg"
+    t.float    "evaporation_rate_litres_per_hour"
     t.float    "kettle_tax_litres"
     t.datetime "created_at"
     t.datetime "updated_at"

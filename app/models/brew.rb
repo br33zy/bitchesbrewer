@@ -4,4 +4,31 @@ class Brew < ActiveRecord::Base
   has_many :fermentables, :dependent => :destroy
   has_many :hop_additions, :dependent => :destroy
 
+  def mash_efficiency_percentage
+    self.brewery.mash_efficiency_percentage
+  end
+
+  def volume_lost_to_mash_litres_per_kg
+    self.brewery.volume_lost_to_mash_litres_per_kg
+  end
+  
+  def kettle_tax_litres
+    self.brewery.kettle_tax_litres
+  end
+
+  def evaporation_rate_litres_per_hour
+    self.brewery.evaporation_rate_litres_per_hour
+  end
+
+  def weight_of_total_grain_bill_kg
+    self.fermentables.map{|fermentable| fermentable.weight_in_kg}.inject(0){|sum,item| sum + item}
+  end
+
+  def pre_boil_total_volume_gravity_points
+    self.fermentables.map{|fermentable| fermentable.pre_boil_volume_gravity_points}.inject(0){|sum,item| sum + item}
+  end
+
+  def post_boil_total_volume_gravity_points
+    self.fermentables.map{|fermentable| fermentable.post_boil_volume_gravity_points}.inject(0){|sum,item| sum + item}
+  end
 end

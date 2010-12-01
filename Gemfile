@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+#source 'http://rubygems.org'
 
 gem 'rails', '3.0.1'
 
@@ -10,9 +10,9 @@ gem 'zymurgy', :path => '/Users/mbreeze/dev/zymurgy'
 gem 'flutie'
 
 group :development, :test do
-  gem 'rspec', '~> 2.1.0'
-  gem "rspec-rails", '~> 2.1.0'
-  gem 'autotest'
+#  gem 'rspec', '~> 2.1.0'
+#  gem "rspec-rails", '~> 2.1.0'
+#  gem 'autotest'
 end
 
 # Use unicorn as the web server
