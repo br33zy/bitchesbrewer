@@ -64,11 +64,11 @@
         <th>Grains</th>
         <th></th>
         <th></th>
-        <th colspan="3">gravity points</th>
+        <th colspan="3" class="bottom">gravity points</th>
         <th></th>
         <th></th>
       </tr>
-      <tr>
+      <tr class="bottom">
         <th>(mash required)</th>
         <th>p/kg/ℓ</th>
         <th>kg</th>
@@ -101,6 +101,7 @@
   <div class="span-9 last">
     <h4 class="prepend-2">hop additions:</h4>
 
+    <!-- Add table helper. Add table headings. Sort by boil minutes descending -->
     <table>
       <% @brew.hop_additions.each do |hop_addition| %>
           <%= render hop_addition %>

@@ -316,6 +316,7 @@ thead tr th{
   /*border-top:1px solid #000;*/
   vertical-align:middle;
   /*border-right:1px solid #eee;*/
+  border: 0
   }
 thead tr th{text-align:center;}
 tbody td,
@@ -323,6 +324,7 @@ thead th {
   vertical-align:middle;
   height:2em;
   width:5em;
+  border: 0
   }
 tbody td {
   color:#363;
@@ -360,11 +362,12 @@ td.calc {
   color:#c00;
 }
 
-tr.bottom {
-  border-bottom: solid #363
+.bottom {
+  border-bottom: 1px solid #363
 }
 tr.total {
-  border-top: double #363
+  border-top: 1px solid #363;
+  border-bottom: double #363
 }
 .right_justify {
   text-align: right
