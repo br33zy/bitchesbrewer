@@ -4,6 +4,14 @@ class Brew < ActiveRecord::Base
   has_many :fermentables, :dependent => :destroy
   has_many :hop_additions, :dependent => :destroy
 
+  validates :name,                       :presence => true
+  validates :original_gravity,           :presence => true, :numericality => {:greater_than => 1000}
+  validates :final_gravity,              :presence => true, :numericality => {:less_than => :original_gravity}
+  validates :fermentation_volume_litres, :presence => true, :numericality => true
+  validates :boil_time_minutes,          :presence => true, :numericality => true
+
+  validates_associated :brewery, :fermentables, :hop_additions
+
   def mash_efficiency_percentage
     self.brewery.mash_efficiency_percentage
   end
@@ -30,5 +38,9 @@ class Brew < ActiveRecord::Base
 
   def post_boil_total_volume_gravity_points
     self.fermentables.map{|fermentable| fermentable.post_boil_volume_gravity_points}.inject(0){|sum,item| sum + item}
+  end
+
+  def total_IBU
+    self.hop_additions.map{|hop_addition| hop_addition.IBU}.inject(0){|sum,item| sum + item}
   end
 end

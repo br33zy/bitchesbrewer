@@ -70,20 +70,20 @@
       </tr>
       <tr class="bottom">
         <th>(mash required)</th>
-        <th>p/kg/ℓ</th>
-        <th>kg</th>
-        <th>pre-boil</th>
-        <th>post-boil</th>
-        <th>%</th>
+        <th class="right_justify">p/kg/ℓ</th>
+        <th class="right_justify">kg</th>
+        <th class="right_justify">pre-boil</th>
+        <th class="right_justify">post-boil</th>
+        <th class="right_justify">%</th>
         <th></th>
         <th></th>
       </tr>
       </thead>
-      <% @fermentables.each do |fermentable| %>
+      <% @fermentables.sort!{|a,b| b.percentage_of_total_gravity_points <=> a.percentage_of_total_gravity_points}.each do |fermentable| %>
           <%= render fermentable %>
       <% end %>
       <tr class="total">
-        <th class="right_justify">Totals:</th>
+        <th>Totals:</th>
         <td></td>
         <td class="calc right_justify"><%= number_with_precision(@brew.weight_of_total_grain_bill_kg, :precision => 2) %></td>
         <td class="calc right_justify"><%= number_with_precision(@brew.pre_boil_total_volume_gravity_points, :precision => 2) %></td>
@@ -103,9 +103,29 @@
 
     <!-- Add table helper. Add table headings. Sort by boil minutes descending -->
     <table>
-      <% @brew.hop_additions.each do |hop_addition| %>
+      <thead>
+      <tr class="bottom">
+        <th class="right_justify">minutes</th>
+        <th>hop name</th>
+        <th class="right_justify">AA %</th>
+        <th class="right_justify">mg</th>
+        <th class="right_justify">IBU</th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <% @brew.hop_additions.sort!{|a,b| b.boil_time_minutes <=> a.boil_time_minutes}.each do |hop_addition| %>
           <%= render hop_addition %>
       <% end %>
+      <tr class="total">
+        <th>Totals:</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="calc right_justify"><%= number_with_precision(@brew.total_IBU, :precision => 2) %></td>
+        <td></td>
+        <td></td>
+      </tr>
     </table>
 
     <h4>Add a new hop addition:</h4>
