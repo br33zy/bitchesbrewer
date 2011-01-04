@@ -1,0 +1,29 @@
+<h4 class="prepend-2">hop additions:</h4>
+
+<!-- Add table helper. Add table headings. Sort by boil minutes descending -->
+<table>
+  <thead>
+  <tr class="bottom">
+    <th class="right_justify">minutes</th>
+    <th>hop name</th>
+    <th class="right_justify">AA %</th>
+    <th class="right_justify">mg</th>
+    <th class="right_justify">IBU</th>
+    <th></th>
+  </tr>
+  </thead>
+  <% @brew.hop_additions.sort!{|a,b| b.boil_time_minutes <=> a.boil_time_minutes}.each do |hop_addition| %>
+      <%= render hop_addition %>
+  <% end %>
+  <tr class="total">
+    <th>Totals:</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="calc right_justify"><%= number_with_precision(@brew.total_IBU, :precision => 2) %></td>
+    <td></td>
+  </tr>
+</table>
+
+<h4>Add a new hop addition:</h4>
+<%= render "hop_additions/form" %>

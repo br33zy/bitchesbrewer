@@ -1,0 +1,51 @@
+<h4 class="prepend-2">fermentables:</h4>
+
+<!-- TODO: Add full table helper with headers and totals. -->
+<table>
+  <thead>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th colspan="3" class="bottom">gravity points</th>
+    <th></th>
+  </tr>
+  <tr class="bottom">
+    <th></th>
+    <th class="right_justify">p/kg/ℓ</th>
+    <th class="right_justify">kg</th>
+    <th class="right_justify">pre-boil</th>
+    <th class="right_justify">post-boil</th>
+    <th class="right_justify">%</th>
+    <th></th>
+  </tr>
+  </thead>
+  <% if @brew.has_unmashed_fermentables %>
+      <tr>
+        <th colspan="7">Sugars, Extracts</th>
+      </tr>
+      <% @fermentables.sort! { |a, b| b.percentage_of_total_gravity_points <=> a.percentage_of_total_gravity_points }.each do |fermentable| %>
+          <%= render fermentable if not fermentable.mash %>
+      <% end %>
+  <% end %>
+  <% if @brew.has_mashed_fermentables %>
+      <tr>
+        <th colspan="7">Mashed Grains</th>
+      </tr>
+      <% @fermentables.sort! { |a, b| b.percentage_of_total_gravity_points <=> a.percentage_of_total_gravity_points }.each do |fermentable| %>
+          <%= render fermentable if fermentable.mash %>
+      <% end %>
+  <% end %>
+  <tr class="total">
+    <th>Totals:</th>
+    <td></td>
+    <td class="calc right_justify"><%= number_with_precision(@brew.weight_of_total_grain_bill_kg, :precision => 2) %></td>
+    <td class="calc right_justify"><%= number_with_precision(@brew.pre_boil_total_volume_gravity_points, :precision => 2) %></td>
+    <td class="calc right_justify"><%= number_with_precision(@brew.post_boil_total_volume_gravity_points, :precision => 2) %></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+<h4>Add a new fermentable:</h4>
+<%= render "fermentables/form" %>

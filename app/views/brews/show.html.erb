@@ -12,6 +12,8 @@
   <div class="span-12 last">
 
     <table width="300">
+      <COLGROUP>
+      <COL><COL align="char" char=".">
       <tbody>
       <tr>
         <th>Boil time minutes:</th>
@@ -19,15 +21,15 @@
       </tr>
       <tr>
         <th>Mash-In volume litres:</th>
-        <td class="calc"><%= @brew.mash_in_volume_litres(@brew.weight_of_total_grain_bill_kg) %></td>
+        <td class="calc"><%= number_with_precision(@brew.mash_in_volume_litres(@brew.weight_of_total_grain_bill_kg), :precision => 2) %></td>
       </tr>
       <tr>
         <th>Mash-Out volume litres:</th>
-        <td class="calc"><%= @brew.mash_out_volume_litres %></td>
+        <td class="calc"><%= number_with_precision(@brew.mash_out_volume_litres, :precision => 2) %></td>
       </tr>
       <tr>
         <th>Post-Boil volume litres:</th>
-        <td class="calc"><%= @brew.post_boil_volume_litres %></td>
+        <td class="calc"><%= number_with_precision(@brew.post_boil_volume_litres, :precision => 2) %></td>
       </tr>
       <tr class="bottom">
         <th>Fermentation volume litres:</th>
@@ -54,82 +56,13 @@
     <%= link_to 'Back', brewery_path(@brew.brewery) %>
   </div>
   <hr/>
+
   <div class="span-9 colborder">
-    <h4 class="prepend-2">fermentables:</h4>
-
-    <!-- TODO: Add full table helper with headers and totals. -->
-    <table>
-      <thead>
-      <tr>
-        <th>Grains</th>
-        <th></th>
-        <th></th>
-        <th colspan="3" class="bottom">gravity points</th>
-        <th></th>
-        <th></th>
-      </tr>
-      <tr class="bottom">
-        <th>(mash required)</th>
-        <th class="right_justify">p/kg/ℓ</th>
-        <th class="right_justify">kg</th>
-        <th class="right_justify">pre-boil</th>
-        <th class="right_justify">post-boil</th>
-        <th class="right_justify">%</th>
-        <th></th>
-        <th></th>
-      </tr>
-      </thead>
-      <% @fermentables.sort!{|a,b| b.percentage_of_total_gravity_points <=> a.percentage_of_total_gravity_points}.each do |fermentable| %>
-          <%= render fermentable %>
-      <% end %>
-      <tr class="total">
-        <th>Totals:</th>
-        <td></td>
-        <td class="calc right_justify"><%= number_with_precision(@brew.weight_of_total_grain_bill_kg, :precision => 2) %></td>
-        <td class="calc right_justify"><%= number_with_precision(@brew.pre_boil_total_volume_gravity_points, :precision => 2) %></td>
-        <td class="calc right_justify"><%= number_with_precision(@brew.post_boil_total_volume_gravity_points, :precision => 2) %></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
-
-    <h4>Add a new fermentable:</h4>
-    <%= render "fermentables/form" %>
-
+    <%= render "fermentables" %>
   </div>
+  
   <div class="span-9 last">
-    <h4 class="prepend-2">hop additions:</h4>
-
-    <!-- Add table helper. Add table headings. Sort by boil minutes descending -->
-    <table>
-      <thead>
-      <tr class="bottom">
-        <th class="right_justify">minutes</th>
-        <th>hop name</th>
-        <th class="right_justify">AA %</th>
-        <th class="right_justify">mg</th>
-        <th class="right_justify">IBU</th>
-        <th></th>
-        <th></th>
-      </tr>
-      </thead>
-      <% @brew.hop_additions.sort!{|a,b| b.boil_time_minutes <=> a.boil_time_minutes}.each do |hop_addition| %>
-          <%= render hop_addition %>
-      <% end %>
-      <tr class="total">
-        <th>Totals:</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="calc right_justify"><%= number_with_precision(@brew.total_IBU, :precision => 2) %></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
-
-    <h4>Add a new hop addition:</h4>
-    <%= render "hop_additions/form" %>
+    <%= render "hop_additions" %>
   </div>
 
 </div>

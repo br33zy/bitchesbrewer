@@ -320,6 +320,7 @@ thead tr th{
   }
 thead tr th{text-align:center;}
 tbody td,
+tbody th,
 thead th {
   vertical-align:middle;
   height:2em;
@@ -341,7 +342,7 @@ tbody th a {
   border-bottom:0.8em solid #839965;
   }
 tbody td a {
-  color:#000;
+  color:#363;
   font-weight:normal;
   }
 tbody tr th a:hover {
@@ -371,4 +372,8 @@ tr.total {
 }
 .right_justify {
   text-align: right
+}
+.indent {
+    padding-left:2em;
+    padding-right:2em
 }

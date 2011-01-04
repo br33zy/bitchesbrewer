@@ -43,4 +43,12 @@ class Brew < ActiveRecord::Base
   def total_IBU
     self.hop_additions.map{|hop_addition| hop_addition.IBU}.inject(0){|sum,item| sum + item}
   end
+
+  def has_mashed_fermentables
+    self.fermentables.map{|fermentable| fermentable.mash}.include?(true)
+  end
+
+  def has_unmashed_fermentables
+    self.fermentables.map{|fermentable| fermentable.mash}.include?(false)
+  end
 end
