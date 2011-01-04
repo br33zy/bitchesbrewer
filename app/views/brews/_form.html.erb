@@ -1,30 +1,34 @@
 <%= form_for([@brewery, @brewery.brews.build]) do |f| %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :brewer %>
-    <%= f.text_field :brewer %>
-  </div>
-  <div class="field">
-    <%= f.label :original_gravity %>
-    <%= f.text_field :original_gravity %>
-  </div>
-  <div class="field">
-    <%= f.label :final_gravity %>
-    <%= f.text_field :final_gravity %>
-  </div>
-  <div class="field">
-    <%= f.label :fermentation_volume_litres %>
-    <%= f.text_field :fermentation_volume_litres %>
-  </div>
-  <div class="field">
-    <%= f.label :boil_time_minutes %> 
-    <%= f.text_field :boil_time_minutes %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <fieldset>
+      <legend>Create a new Brew Recipe</legend>
+      <ol>
+        <li>
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+        </li>
+        <li>
+          <%= f.label :brewer %>
+          <%= f.text_field :brewer %>
+        </li>
+        <li>
+          <%= f.label :original_gravity %>
+          <%= f.text_field :original_gravity %>
+        </li>
+        <li>
+          <%= f.label :final_gravity %>
+          <%= f.text_field :final_gravity %>
+        </li>
+        <li>
+          <%= f.label :fermentation_volume_litres %>
+          <%= f.text_field :fermentation_volume_litres %>
+        </li>
+        <li>
+          <%= f.label :boil_time_minutes %>
+          <%= f.text_field :boil_time_minutes %>
+        </li>
+        <li class="submit">
+          <%= f.submit %>
+        </li>
+      </ol>
+    </fieldset>
 <% end %>

@@ -7,23 +7,22 @@
   <tbody>
   <tr>
     <th>Mash efficiency percentage:</th>
-    <td><%= @brewery.mash_efficiency_percentage %>%</td>
+    <td><%= link_to @brewery.mash_efficiency_percentage, edit_brewery_path(@brewery) %>%</td>
   </tr>
   <tr>
     <th>Volume lost to mash litres per kg:</th>
-    <td><%= @brewery.volume_lost_to_mash_litres_per_kg %></td>
+    <td><%= link_to @brewery.volume_lost_to_mash_litres_per_kg, edit_brewery_path(@brewery) %></td>
   </tr>
   <tr>
     <th>Boil evaporation rate litres per hour:</th>
-    <td><%= @brewery.evaporation_rate_litres_per_hour %></td>
+    <td><%= link_to @brewery.evaporation_rate_litres_per_hour, edit_brewery_path(@brewery) %></td>
   </tr>
   <tr>
     <th>Kettle tax litres:</th>
-    <td><%= @brewery.kettle_tax_litres %></td>
+    <td><%= link_to @brewery.kettle_tax_litres, edit_brewery_path(@brewery) %></td>
   </tr>
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_brewery_path(@brewery) %> |
 <%= link_to 'Back', breweries_path %>
 

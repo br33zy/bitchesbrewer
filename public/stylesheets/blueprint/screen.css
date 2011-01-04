@@ -266,6 +266,37 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 .clear {clear:both;}
 
 
+/* Form layout */
+fieldset {
+margin: 1.5em 0 0 0;
+padding: 0;
+}
+legend {
+margin-left: 1em;
+color: #000000;
+font-weight: bold;
+}
+fieldset ol {
+padding: 1em 0.1em 0 0.1em;
+list-style: none;
+}
+fieldset li {
+padding-bottom: 0em;
+line-height:2em
+}
+li.submit {
+border-style: none;
+margin-left: 16.5em;
+}
+label {
+float: left;
+width: 16em;
+margin-right: 0.5em;
+text-align: right;
+}
+
+
+
 
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xx  CSS Table Gallery               xx
@@ -281,7 +312,7 @@ table {
   line-height:1em;
   width: 100px;
   border:1px solid #363;
-  white-space:nowrap;  
+  white-space:nowrap;
   }
 td, th {
   padding:0 0.5em;

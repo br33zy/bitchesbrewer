@@ -10,18 +10,16 @@
     <th>Kettle tax litres</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @breweries.each do |brewery| %>
   <tr>
-    <td><%= brewery.name %></td>
+    <td><%= link_to brewery.name, brewery %></td>
     <td><%= brewery.head_brewer %></td>
     <td><%= brewery.mash_efficiency_percentage %></td>
     <td><%= brewery.volume_lost_to_mash_litres_per_kg %></td>
     <td><%= brewery.evaporation_rate_litres_per_hour %></td>
     <td><%= brewery.kettle_tax_litres %></td>
-    <td><%= link_to 'Show', brewery %></td>
     <td><%= link_to 'Edit', edit_brewery_path(brewery) %></td>
     <td><%= link_to 'Destroy', brewery, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
