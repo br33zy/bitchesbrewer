@@ -1,0 +1,40 @@
+== TODO
+* Add authentification
+* Deploy to heroku
+* Separate Recipe and Brew Session
+* Establish site use cases:
+  * Unauthenticated users
+  * Registration process
+  * "Lets get started in 3 steps"
+* Yeast attenuation
+* Priming calculator
+* metric/imperial calculations
+* Hook in to official beer styles
+* Colour calculation
+* Calculators
+  * gravity vs temperature (linograph)
+* Inventory
+  * available ingredients
+  * cost of ingredients/brew/brew per litre
+* Recent recipes
+* Recent brews
+* $10/year to hide recipes and brews
+* commonly used fermentables
+* commonly used hops
+* recipe search by ingredient
+* copy/clone recipe
+* communications:
+  * blog
+  * forum for feature and bug requests
+  * wiki for user guide
+* mash calculations:
+  * stepped mashes
+  * sparging
+* standardise fermentable names
+* standardise hop names
+* choice of calculation methods for ABV, IBU etc
+
+== Scaffolding history help
+  582  rails generate controller Breweries
+  583  rails generate controller Brews
+  595  rails generate scaffold Brew name:string brewer:string original_gravity:float final_gravity:float fermentation_volume_litres:float boil_time_minutes:integer brewery:references
