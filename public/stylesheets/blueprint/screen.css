@@ -408,3 +408,15 @@ tr.total {
     padding-left:2em;
     padding-right:2em
 }
+
+/* Styling for signin signout */
+ul.hmenu {
+  float: right;  
+  list-style: none;
+  margin: 0 0 2em;
+  padding: 0;
+}
+
+ul.hmenu li {
+  display: inline;
+}
