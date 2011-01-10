@@ -46,4 +46,7 @@ Bitchesbrewer::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  # devise confirmation mailer
+  config.action_mailer.default_url_options = { :host => 'http://bitchesbrewer.heroku.com/' }
 end
