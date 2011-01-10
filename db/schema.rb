@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110109113313) do
+ActiveRecord::Schema.define(:version => 20110110105503) do
 
   create_table "breweries", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20110109113313) do
     t.float    "kettle_tax_litres"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "brews", :force => true do |t|

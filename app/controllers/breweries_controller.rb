@@ -40,6 +40,7 @@ class BreweriesController < ApplicationController
   # POST /breweries
   # POST /breweries.xml
   def create
+    params[:brewery][:user_id] = current_user.id
     @brewery = Brewery.new(params[:brewery])
 
     respond_to do |format|
