@@ -1,8 +1,10 @@
 class BreweriesController < ApplicationController
+  load_and_authorize_resource
+
   # GET /breweries
   # GET /breweries.xml
   def index
-    @breweries = Brewery.all
+#    @breweries = Brewery.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +15,7 @@ class BreweriesController < ApplicationController
   # GET /breweries/1
   # GET /breweries/1.xml
   def show
-    @brewery = Brewery.find(params[:id])
+#    @brewery = Brewery.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +26,7 @@ class BreweriesController < ApplicationController
   # GET /breweries/new
   # GET /breweries/new.xml
   def new
-    @brewery = Brewery.new
+#    @brewery = Brewery.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,7 +36,7 @@ class BreweriesController < ApplicationController
 
   # GET /breweries/1/edit
   def edit
-    @brewery = Brewery.find(params[:id])
+#    @brewery = Brewery.find(params[:id])
   end
 
   # POST /breweries
@@ -57,7 +59,7 @@ class BreweriesController < ApplicationController
   # PUT /breweries/1
   # PUT /breweries/1.xml
   def update
-    @brewery = Brewery.find(params[:id])
+#    @brewery = Brewery.find(params[:id])
 
     respond_to do |format|
       if @brewery.update_attributes(params[:brewery])
@@ -73,7 +75,7 @@ class BreweriesController < ApplicationController
   # DELETE /breweries/1
   # DELETE /breweries/1.xml
   def destroy
-    @brewery = Brewery.find(params[:id])
+#    @brewery = Brewery.find(params[:id])
     @brewery.destroy
 
     respond_to do |format|

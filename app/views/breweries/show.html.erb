@@ -29,17 +29,17 @@
   <b>Kettle tax litres:</b>
   <%= @brewery.kettle_tax_litres %>
 </p>
-
-<%= link_to 'Edit', edit_brewery_path(@brewery) %> |
+<% if can? :edit, @brewery %>
+    <%= link_to 'Edit', edit_brewery_path(@brewery) %> |
+<% end %>
 <%= link_to 'Back', breweries_path %>
-
 <hr>
 
 <h3>brew recipes:</h3>
 
 <table>
   <% @brewery.brews.each do |brew| %>
-    <%= render brew %>
+      <%= render brew %>
   <% end %>
 </table>
 

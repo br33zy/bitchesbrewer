@@ -13,46 +13,47 @@
 
     <table width="300">
       <COLGROUP>
-      <COL><COL align="char" char=".">
-      <tbody>
-      <tr>
-        <th>Boil time minutes:</th>
-        <td><%= @brew.boil_time_minutes %></td>
-      </tr>
-      <tr>
-        <th>Mash-In volume litres:</th>
-        <td class="calc"><%= number_with_precision(@brew.mash_in_volume_litres(@brew.weight_of_total_grain_bill_kg), :precision => 2) %></td>
-      </tr>
-      <tr>
-        <th>Mash-Out volume litres:</th>
-        <td class="calc"><%= number_with_precision(@brew.mash_out_volume_litres, :precision => 2) %></td>
-      </tr>
-      <tr>
-        <th>Post-Boil volume litres:</th>
-        <td class="calc"><%= number_with_precision(@brew.post_boil_volume_litres, :precision => 2) %></td>
-      </tr>
-      <tr class="bottom">
-        <th>Fermentation volume litres:</th>
-        <td><%= @brew.fermentation_volume_litres %></td>
-      </tr>
+        <COL>
+        <COL align="char" char=".">
+        <tbody>
+        <tr>
+          <th>Boil time minutes:</th>
+          <td><%= @brew.boil_time_minutes %></td>
+        </tr>
+        <tr>
+          <th>Mash-In volume litres:</th>
+          <td class="calc"><%= number_with_precision(@brew.mash_in_volume_litres(@brew.weight_of_total_grain_bill_kg), :precision => 2) %></td>
+        </tr>
+        <tr>
+          <th>Mash-Out volume litres:</th>
+          <td class="calc"><%= number_with_precision(@brew.mash_out_volume_litres, :precision => 2) %></td>
+        </tr>
+        <tr>
+          <th>Post-Boil volume litres:</th>
+          <td class="calc"><%= number_with_precision(@brew.post_boil_volume_litres, :precision => 2) %></td>
+        </tr>
+        <tr class="bottom">
+          <th>Fermentation volume litres:</th>
+          <td><%= @brew.fermentation_volume_litres %></td>
+        </tr>
 
-      <tr>
-        <th>Original gravity:</th>
-        <td><%= @brew.original_gravity %></td>
-      </tr>
-      <tr>
-        <th>Final gravity:</th>
-        <td><%= @brew.final_gravity %></td>
-      </tr>
-      <tr>
-        <th>Est. ABV%:</th>
-        <td class="calc"><%= number_with_precision(@brew.alcohol_by_volume, :precision => 1) %>%</td>
-      </tr>
-      </tbody>
+        <tr>
+          <th>Original gravity:</th>
+          <td><%= @brew.original_gravity %></td>
+        </tr>
+        <tr>
+          <th>Final gravity:</th>
+          <td><%= @brew.final_gravity %></td>
+        </tr>
+        <tr>
+          <th>Est. ABV%:</th>
+          <td class="calc"><%= number_with_precision(@brew.alcohol_by_volume, :precision => 1) %>%</td>
+        </tr>
+        </tbody>
     </table>
-
-
-    <%= link_to 'Edit', edit_brewery_brew_path(@brew.brewery, @brew) %> |
+    <% if can? :edit, @brew %>
+        <%= link_to 'Edit', edit_brewery_brew_path(@brew.brewery, @brew) %> |
+    <% end %>
     <%= link_to 'Back', brewery_path(@brew.brewery) %>
   </div>
   <hr/>
@@ -60,7 +61,7 @@
   <div class="span-9 colborder">
     <%= render "fermentables" %>
   </div>
-  
+
   <div class="span-9 last">
     <%= render "hop_additions" %>
   </div>
