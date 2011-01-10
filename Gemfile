@@ -7,7 +7,7 @@ gem 'devise'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql'
-gem 'zymurgy', :path => '/Users/mbreeze/dev/zymurgy'
+gem 'zymurgy'
 gem 'flutie'
 
 group :development, :test do

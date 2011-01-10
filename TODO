@@ -1,5 +1,7 @@
-== TODO
+== DONE
 * Add authentification
+
+== TODO
 * Deploy to heroku
 * Separate Recipe and Brew Session
 * Establish site use cases:
