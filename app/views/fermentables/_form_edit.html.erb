@@ -1,22 +1,26 @@
 <%= form_for([@brewery, @brew, @fermentable]) do |f| %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :mash %><br />
-    <%= f.check_box :mash %>
-  </div>
-  <div class="field">
-    <%= f.label :points_per_kg_per_litre %><br />
-    <%= f.text_field :points_per_kg_per_litre %>
-  </div>
-  <div class="field">
-    <%= f.label :weight_in_kg %><br />
-    <%= f.text_field :weight_in_kg %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <fieldset>
+      <legend>Edit Fermentable Details</legend>
+      <ol>
+        <li>
+          <%= f.label :mash %>
+          <%= f.check_box :mash %>
+        </li>
+        <li>
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+        </li>
+        <li>
+          <%= f.label :points_per_kg_per_litre %>
+          <%= f.text_field :points_per_kg_per_litre %>
+        </li>
+        <li>
+          <%= f.label :weight_in_kg %>
+          <%= f.text_field :weight_in_kg %>
+        </li>
+        <li class="submit">
+          <%= f.submit %>
+        </li>
+      </ol>
+    </fieldset>
 <% end %>

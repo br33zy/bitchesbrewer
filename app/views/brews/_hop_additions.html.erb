@@ -25,4 +25,6 @@
   </tr>
 </table>
 
-<%= render "hop_additions/form" %>
+<% if can? :manage, @brew %>
+    <%= render "hop_additions/form" %>
+<% end %>

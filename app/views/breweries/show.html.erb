@@ -43,5 +43,7 @@
   <% end %>
 </table>
 
-<%= render "brews/form" %>
+<% if can? :manage, @brewery %>
+    <%= render "brews/form" %>
+<% end %>
 
