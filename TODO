@@ -1,11 +1,31 @@
 == DONE
 * Add authentification
+* Deploy to heroku
+
+== Words
+Recipe: A standalone brewing recipe.
+Brew: A brewing recipe tied in to a brewer's brewery, thus picking up calculations
+      on efficiency from that brewery.
+Brew Sheet: An instance of the recipe on brew day. Allowing actual brewday calcs
+            to be displayed alongside and compared with planned numbers.
 
 == TODO
-* Deploy to heroku
-* Separate Recipe and Brew Session
+* Notes for a brew recipe.
+* Total litres brewed for a brewery.
+* Recipe view for non-owners of the brewery.
+  * % by gravity should be % by weight to support this
+* Separate Brew Recipe and Brew Session
+  * Brew sheet for brew day with dynamic calculations alongside planned calcs.
+  * Print stylesheet for brewsheet
 * Establish site use cases:
+  * Authenticated users
+    * Home
+      * My breweries
+      * My recipes
+      * Recent brews
   * Unauthenticated users
+    * Home
+      * Create a brewery now!
   * Registration process
   * "Lets get started in 3 steps"
 * Yeast attenuation

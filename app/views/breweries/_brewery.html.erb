@@ -1,28 +1,25 @@
 <p>
   <b>Brewery: </b><%= link_to @brew.brewery.name, brewery_path(@brew.brewery) %><br/>
-  <b>Head brewer: </b><%= @brewery.head_brewer %>
+  <b>Head brewer: </b><%= link_to @brewery.head_brewer, breweries_path %>
 </p>
 
 <table width="300">
   <tbody>
   <tr>
     <th>Mash efficiency percentage:</th>
-    <td><%= link_to @brewery.mash_efficiency_percentage, edit_brewery_path(@brewery) %>%</td>
+    <td><%= link_to_if(can?(:edit, @brewery), @brewery.mash_efficiency_percentage, edit_brewery_path(@brewery)) %>%</td>
   </tr>
   <tr>
     <th>Volume lost to mash litres per kg:</th>
-    <td><%= link_to @brewery.volume_lost_to_mash_litres_per_kg, edit_brewery_path(@brewery) %></td>
+    <td><%= link_to_if(can?(:edit, @brewery), @brewery.volume_lost_to_mash_litres_per_kg, edit_brewery_path(@brewery)) %></td>
   </tr>
   <tr>
     <th>Boil evaporation rate litres per hour:</th>
-    <td><%= link_to @brewery.evaporation_rate_litres_per_hour, edit_brewery_path(@brewery) %></td>
+    <td><%= link_to_if(can?(:edit, @brewery), @brewery.evaporation_rate_litres_per_hour, edit_brewery_path(@brewery)) %></td>
   </tr>
   <tr>
     <th>Kettle tax litres:</th>
-    <td><%= link_to @brewery.kettle_tax_litres, edit_brewery_path(@brewery) %></td>
+    <td><%= link_to_if(can?(:edit, @brewery), @brewery.kettle_tax_litres, edit_brewery_path(@brewery)) %></td>
   </tr>
   </tbody>
 </table>
-
-<%= link_to 'Back', breweries_path %>
-

@@ -18,7 +18,7 @@
         <tbody>
         <tr>
           <th>Boil time minutes:</th>
-          <td><%= @brew.boil_time_minutes %></td>
+          <td><%= link_to_if(can?(:edit, @brew), @brew.boil_time_minutes, edit_brewery_brew_path(@brew.brewery, @brew)) %></td>
         </tr>
         <tr>
           <th>Mash-In volume litres:</th>
@@ -34,16 +34,16 @@
         </tr>
         <tr class="bottom">
           <th>Fermentation volume litres:</th>
-          <td><%= @brew.fermentation_volume_litres %></td>
+          <td><%= link_to_if(can?(:edit, @brew), @brew.fermentation_volume_litres, edit_brewery_brew_path(@brew.brewery, @brew)) %></td>
         </tr>
 
         <tr>
           <th>Original gravity:</th>
-          <td><%= @brew.original_gravity %></td>
+          <td><%= link_to_if(can?(:edit, @brew), @brew.original_gravity, edit_brewery_brew_path(@brew.brewery, @brew)) %></td>
         </tr>
         <tr>
           <th>Final gravity:</th>
-          <td><%= @brew.final_gravity %></td>
+          <td><%= link_to_if(can?(:edit, @brew), @brew.final_gravity, edit_brewery_brew_path(@brew.brewery, @brew)) %></td>
         </tr>
         <tr>
           <th>Est. ABV%:</th>
@@ -51,10 +51,6 @@
         </tr>
         </tbody>
     </table>
-    <% if can? :edit, @brew %>
-        <%= link_to 'Edit', edit_brewery_brew_path(@brew.brewery, @brew) %> |
-    <% end %>
-    <%= link_to 'Back', brewery_path(@brew.brewery) %>
   </div>
   <hr/>
 
