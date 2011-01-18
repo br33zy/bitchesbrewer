@@ -25,9 +25,9 @@ Brew Sheet: An instance of the recipe on brew day. Allowing actual brewday calcs
       * Recent brews
   * Unauthenticated users
     * Home
-      * Create a brewery now!
+      * Recipe list
+      * "Lets get started in 3 steps"
   * Registration process
-  * "Lets get started in 3 steps"
 * Yeast attenuation
 * Priming calculator
 * metric/imperial calculations
