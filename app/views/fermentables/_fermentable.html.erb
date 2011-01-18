@@ -2,11 +2,11 @@
   <td class="indent"><%= link_to_if(can?(:edit, fermentable), fermentable.name, edit_brewery_brew_fermentable_path(fermentable.brew.brewery, fermentable.brew, fermentable)) %></td>
   <td class="right_justify"><%= fermentable.points_per_kg_per_litre %></td>
   <td class="right_justify"><%= number_with_precision(fermentable.weight_in_kg, :precision => 2) %></td>
-  <td class="calc right_justify"><%= number_with_precision(fermentable.pre_boil_volume_gravity_points, :precision => 2) %></td>
-  <td class="calc right_justify"><%= number_with_precision(fermentable.post_boil_volume_gravity_points, :precision => 2) %></td>
-  <td class="calc right_justify"><%= number_with_precision(fermentable.percentage_of_total_gravity_points, :precision => 1) %>
+  <td class="calc right_justify"><%= number_with_precision(fermentable.percentage_weight_of_total_grain_bill, :precision => 1) %>
     %
   </td>
+  <td class="calc right_justify"><%= number_with_precision(fermentable.pre_boil_volume_gravity_points, :precision => 2) %></td>
+  <td class="calc right_justify"><%= number_with_precision(fermentable.post_boil_volume_gravity_points, :precision => 2) %></td>
   <td>
     <% if can? :destroy, fermentable %>
         <%= link_to 'x', [fermentable.brew.brewery, fermentable.brew, fermentable], :confirm => 'Are you sure?', :method => :delete %>

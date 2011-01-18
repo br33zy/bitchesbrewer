@@ -17,4 +17,8 @@ class Fermentable < ActiveRecord::Base
   def percentage_of_total_gravity_points
     self.post_boil_volume_gravity_points * 100 / self.brew.post_boil_total_volume_gravity_points
   end
+
+  def percentage_weight_of_total_grain_bill
+    self.weight_in_kg * 100 / self.brew.weight_of_total_grain_bill_kg
+  end
 end
