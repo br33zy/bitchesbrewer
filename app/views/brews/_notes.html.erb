@@ -1,0 +1,5 @@
+<% @brew.notes.split(/\r\n/).each do |line| %>
+  <% if line.strip.length > 0 %>
+    <p class="notes"><%= line %></p>
+  <% end %>
+<% end %>

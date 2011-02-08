@@ -295,6 +295,11 @@ margin-right: 0.5em;
 text-align: right;
 }
 
+p.notes {
+  color:#363;
+  line-height: 1em;
+  margin: 0.8em 0.2em;
+}
 
 
 

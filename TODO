@@ -1,6 +1,7 @@
 == DONE
 * Add authentification
 * Deploy to heroku
+* Notes for a brew recipe.
 
 == Words
 Recipe: A standalone brewing recipe.
@@ -9,8 +10,43 @@ Brew: A brewing recipe tied in to a brewer's brewery, thus picking up calculatio
 Brew Sheet: An instance of the recipe on brew day. Allowing actual brewday calcs
             to be displayed alongside and compared with planned numbers.
 
+== Brewsheet
+* Measurements and calculations on the day:
+    * Mash temp & gravity (gravity temp. conversions)
+    * Actual quantities used
+    * Actual gravity at mash out, pre-boil, post-boil
+    * Pitch temperature
+    * Achieved efficiency
+    * Gravity readings
+* Additions for gravity adjustments?
+* Stores above for Brewery, and brew.
+* Each Brew may have many brewsheets
+  * Each BrewSheet may have many Fermentables (re-use?)
+  * Each BrewSheet may have many Hop Additions (re-use?)
+* Each BrewSheet may have many gravity readings
+  * Temperature (optional)
+  * Gravity
+  * Datestamp
+
+== Brewsheet tasks
+* Scaffold model and controller
+   * rails generate scaffold BrewSheet
+       name:string brewer:string original_gravity:float final_gravity:float fermentation_volume_litres:float
+       boil_time_minutes:integer achieved_efficiency_percentage:float
+       brew:references
+  * rails generate scaffold GravityReading
+      temperature_degrees_celsius:float gravity_points:float reading_date_time:date brew_sheet:references
+
+* add route nesting
+* integrate
+
 == TODO
-* Notes for a brew recipe.
+* Add mash temp to Brew.
+* Brew Clock
+  * Recipe based alerts (mash times, hop additions, flame out)
+* Arduino integration
+  * Push message
+  * Pull gravity reading.
 * Total litres brewed for a brewery.
 * Recipe view for non-owners of the brewery.
   * % by gravity should be % by weight to support this
