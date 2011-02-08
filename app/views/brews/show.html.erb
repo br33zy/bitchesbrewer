@@ -51,7 +51,7 @@
         </tr>
         </tbody>
     </table>
-    <%= render "notes" %>
+    <%= render "notes" unless @brew.notes.blank? %>
   </div>
   <hr/>
 
