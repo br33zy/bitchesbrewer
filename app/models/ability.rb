@@ -7,6 +7,7 @@ class Ability
     can :manage, Brew,                   :brewery => { :user_id => user.id }
     can :manage, Fermentable, :brew => { :brewery => { :user_id => user.id }}
     can :manage, HopAddition, :brew => { :brewery => { :user_id => user.id }}
+    can :manage, BrewSheet,   :brew => { :brewery => { :user_id => user.id }}
     can :read, :all
 
   end

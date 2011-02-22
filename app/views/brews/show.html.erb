@@ -1,15 +1,19 @@
-<div class="span-19 colborder" id="content">
+<div class="span-19" id="content">
   <h2 class="prepend-5 prepend-top"><%= @brew.name %></h2>
 
   <blockquote class="prepend-5">A beer-style by <%= @brew.brewer %></blockquote>
 
+  <div class="span-18 last">
+    <%= render "notes" unless @brew.notes.blank? %>
+  </div>
+  <hr />
   <p id="notice"><%= notice %></p>
 
   <div class="span-6 colborder">
     <%= render @brewery %>
   </div>
 
-  <div class="span-12 last">
+  <div class="span-5 colborder">
 
     <table width="300">
       <COLGROUP>
@@ -51,7 +55,6 @@
         </tr>
         </tbody>
     </table>
-    <%= render "notes" unless @brew.notes.blank? %>
   </div>
   <hr/>
 
@@ -61,6 +64,10 @@
 
   <div class="span-9 last">
     <%= render "hop_additions" %>
+  </div>
+  <hr/>
+  <div class="span-18 last">
+    <%= render "brew_sheets" %>
   </div>
 
 </div>

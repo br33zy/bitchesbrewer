@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  brewer: MyString
+  brew_date: 2011-02-09 22:55:34
+  brew_notes: MyText
+  mash_temperature_celsius: 1.5
+  pitching_temperature_celsius: 1.5
+  original_gravity: 1.5
+  final_gravity: 1.5
+  fermentation_volume_litres: 1.5
+  boil_time_minutes: 1
+  achieved_efficiency_percentage: 1.5
+  brew: 
+
+two:
+  name: MyString
+  brewer: MyString
+  brew_date: 2011-02-09 22:55:34
+  brew_notes: MyText
+  mash_temperature_celsius: 1.5
+  pitching_temperature_celsius: 1.5
+  original_gravity: 1.5
+  final_gravity: 1.5
+  fermentation_volume_litres: 1.5
+  boil_time_minutes: 1
+  achieved_efficiency_percentage: 1.5
+  brew: 

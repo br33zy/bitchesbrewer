@@ -1,0 +1,45 @@
+<h1>Listing brew_sheets</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Brewer</th>
+    <th>Brew date</th>
+    <th>Brew notes</th>
+    <th>Mash temperature celsius</th>
+    <th>Pitching temperature celsius</th>
+    <th>Original gravity</th>
+    <th>Final gravity</th>
+    <th>Fermentation volume litres</th>
+    <th>Boil time minutes</th>
+    <th>Achieved efficiency percentage</th>
+    <th>Brew</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @brew_sheets.each do |brew_sheet| %>
+  <tr>
+    <td><%= brew_sheet.name %></td>
+    <td><%= brew_sheet.brewer %></td>
+    <td><%= brew_sheet.brew_date %></td>
+    <td><%= brew_sheet.brew_notes %></td>
+    <td><%= brew_sheet.mash_temperature_celsius %></td>
+    <td><%= brew_sheet.pitching_temperature_celsius %></td>
+    <td><%= brew_sheet.original_gravity %></td>
+    <td><%= brew_sheet.final_gravity %></td>
+    <td><%= brew_sheet.fermentation_volume_litres %></td>
+    <td><%= brew_sheet.boil_time_minutes %></td>
+    <td><%= brew_sheet.achieved_efficiency_percentage %></td>
+    <td><%= brew_sheet.brew %></td>
+    <td><%= link_to 'Show', brew_sheet %></td>
+    <td><%= link_to 'Edit', edit_brew_sheet_path(brew_sheet) %></td>
+    <td><%= link_to 'Destroy', brew_sheet, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Brew sheet', new_brew_sheet_path %>

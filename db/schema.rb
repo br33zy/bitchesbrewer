@@ -10,7 +10,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110119053010) do
+ActiveRecord::Schema.define(:version => 20110209115534) do
+
+  create_table "brew_sheets", :force => true do |t|
+    t.string   "name"
+    t.string   "brewer"
+    t.datetime "brew_date"
+    t.text     "brew_notes"
+    t.float    "mash_temperature_celsius"
+    t.float    "pitching_temperature_celsius"
+    t.float    "original_gravity"
+    t.float    "final_gravity"
+    t.float    "fermentation_volume_litres"
+    t.integer  "boil_time_minutes"
+    t.float    "achieved_efficiency_percentage"
+    t.integer  "brew_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "breweries", :force => true do |t|
     t.string   "name"

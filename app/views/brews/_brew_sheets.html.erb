@@ -1,0 +1,20 @@
+<h4 class="prepend-2">Brews made from this recipe:</h4>
+
+<table>
+  <thead>
+  <tr class="bottom">
+    <th class="right_justify">minutes</th>
+    <th>hop name</th>
+    <th class="right_justify">AA %</th>
+    <th class="right_justify">mg</th>
+    <th class="right_justify">IBU</th>
+    <th></th>
+  </tr>
+  </thead>
+</table>
+
+<% if can? :manage, @brew %>
+    <%= render "brew_sheets/form" %>
+<% end %>
+
+

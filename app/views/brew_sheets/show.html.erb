@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @brew_sheet.name %>
+</p>
+
+<p>
+  <b>Brewer:</b>
+  <%= @brew_sheet.brewer %>
+</p>
+
+<p>
+  <b>Brew date:</b>
+  <%= @brew_sheet.brew_date %>
+</p>
+
+<p>
+  <b>Brew notes:</b>
+  <%= @brew_sheet.brew_notes %>
+</p>
+
+<p>
+  <b>Mash temperature celsius:</b>
+  <%= @brew_sheet.mash_temperature_celsius %>
+</p>
+
+<p>
+  <b>Pitching temperature celsius:</b>
+  <%= @brew_sheet.pitching_temperature_celsius %>
+</p>
+
+<p>
+  <b>Original gravity:</b>
+  <%= @brew_sheet.original_gravity %>
+</p>
+
+<p>
+  <b>Final gravity:</b>
+  <%= @brew_sheet.final_gravity %>
+</p>
+
+<p>
+  <b>Fermentation volume litres:</b>
+  <%= @brew_sheet.fermentation_volume_litres %>
+</p>
+
+<p>
+  <b>Boil time minutes:</b>
+  <%= @brew_sheet.boil_time_minutes %>
+</p>
+
+<p>
+  <b>Achieved efficiency percentage:</b>
+  <%= @brew_sheet.achieved_efficiency_percentage %>
+</p>
+
+<p>
+  <b>Brew:</b>
+  <%= @brew_sheet.brew %>
+</p>
+
+
+<%= link_to 'Edit', edit_brew_sheet_path(@brew_sheet) %> |
+<%= link_to 'Back', brew_sheets_path %>

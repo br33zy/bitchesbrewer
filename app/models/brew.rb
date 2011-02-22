@@ -1,8 +1,9 @@
 class Brew < ActiveRecord::Base
   acts_as_brew_recipe
   belongs_to :brewery
-  has_many :fermentables, :dependent => :destroy
+  has_many :fermentables,  :dependent => :destroy
   has_many :hop_additions, :dependent => :destroy
+  has_many :brew_sheets,   :dependent => :destroy
 
   validates :name,                       :presence => true
   validates :original_gravity,           :presence => true, :numericality => {:greater_than => 1000}
@@ -10,7 +11,7 @@ class Brew < ActiveRecord::Base
   validates :fermentation_volume_litres, :presence => true, :numericality => true
   validates :boil_time_minutes,          :presence => true, :numericality => true
 
-  validates_associated :brewery, :fermentables, :hop_additions
+  validates_associated :brewery, :fermentables, :hop_additions, :brewsheets
 
   def mash_efficiency_percentage
     self.brewery.mash_efficiency_percentage

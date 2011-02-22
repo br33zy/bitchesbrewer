@@ -30,10 +30,7 @@ Brew Sheet: An instance of the recipe on brew day. Allowing actual brewday calcs
 
 == Brewsheet tasks
 * Scaffold model and controller
-   * rails generate scaffold BrewSheet
-       name:string brewer:string original_gravity:float final_gravity:float fermentation_volume_litres:float
-       boil_time_minutes:integer achieved_efficiency_percentage:float
-       brew:references
+   * rails generate scaffold BrewSheet name:string brewer:string original_gravity:float final_gravity:float fermentation_volume_litres:float boil_time_minutes:integer achieved_efficiency_percentage:float brew:references
   * rails generate scaffold GravityReading
       temperature_degrees_celsius:float gravity_points:float reading_date_time:date brew_sheet:references
 
@@ -96,3 +93,5 @@ Brew Sheet: An instance of the recipe on brew day. Allowing actual brewday calcs
   582  rails generate controller Breweries
   583  rails generate controller Brews
   595  rails generate scaffold Brew name:string brewer:string original_gravity:float final_gravity:float fermentation_volume_litres:float boil_time_minutes:integer brewery:references
+
+binningup.com - bitchesbrewer

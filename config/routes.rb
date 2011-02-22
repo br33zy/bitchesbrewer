@@ -3,7 +3,7 @@ Bitchesbrewer::Application.routes.draw do
 
   resources :breweries do
     resources :brews do
-      resources :fermentables, :hop_additions
+      resources :fermentables, :hop_additions, :brew_sheets
     end
   end
 
