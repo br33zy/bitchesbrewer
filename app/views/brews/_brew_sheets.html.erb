@@ -12,6 +12,9 @@
     <th>boil time</th>
   </tr>
   </thead>
+  <% @brew.brew_sheets.sort!{|a,b| b.brew_date <=> a.brew_date}.each do |brew_sheet| %>
+      <%= render brew_sheet %>
+  <% end %>
 </table>
 
 <% if can? :manage, @brew %>

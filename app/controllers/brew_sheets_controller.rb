@@ -39,15 +39,7 @@ class BrewSheetsController < ApplicationController
   def create
     @brew_sheet = @brew.brew_sheets.create(params[:brew_sheet])
 
-    respond_to do |format|
-      if @brew_sheet.save
-        format.html { redirect_to(@brew_sheet, :notice => 'Brew sheet was successfully created.') }
-        format.xml  { render :xml => @brew_sheet, :status => :created, :location => @brew_sheet }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @brew_sheet.errors, :status => :unprocessable_entity }
-      end
-    end
+    redirect_to brewery_brew_brew_sheet_path(@brewery, @brew, @brew_sheet)
   end
 
   # PUT /brew_sheets/1
