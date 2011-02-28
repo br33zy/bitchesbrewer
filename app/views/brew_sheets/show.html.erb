@@ -6,18 +6,13 @@
 </p>
 
 <p>
+  <b>Brew date:</b>
+  <%= @brew_sheet.brew_date.strftime('%Y-%m-%d') %>
+</p>
+
+<p>
   <b>Brewer:</b>
   <%= @brew_sheet.brewer %>
-</p>
-
-<p>
-  <b>Brew date:</b>
-  <%= @brew_sheet.brew_date %>
-</p>
-
-<p>
-  <b>Brew notes:</b>
-  <%= @brew_sheet.brew_notes %>
 </p>
 
 <p>
@@ -55,9 +50,10 @@
   <%= @brew_sheet.achieved_efficiency_percentage %>
 </p>
 
+
 <p>
-  <b>Brew:</b>
-  <%= @brew_sheet.brew %>
+  <b>Brew notes:</b>
+  <%= @brew_sheet.brew_notes %>
 </p>
 
 

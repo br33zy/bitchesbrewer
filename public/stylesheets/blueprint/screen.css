@@ -409,6 +409,9 @@ tr.total {
 .right_justify {
   text-align: right
 }
+.left_justify {
+  text-align: left
+}
 .indent {
     padding-left:2em;
     padding-right:2em

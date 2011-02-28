@@ -1,12 +1,12 @@
 <tr>
-  <td><%= brew_sheet.brew_date.strftime('%Y-%m-%d') %></td>
-  <td><%= brew_sheet.name %></td>
-  <td><%= brew_sheet.brewer %></td>
-  <td><%= brew_sheet.mash_temperature_celsius %></td>
-  <td><%= brew_sheet.boil_time_minutes %></td>
-  <td><%= brew_sheet.original_gravity %></td>
-  <td><%= brew_sheet.final_gravity %></td>
-  <td><%= brew_sheet.fermentation_volume_litres %></td>
+  <td class="left_justify"><%= link_to brew_sheet.brew_date.strftime('%Y-%m-%d'), brewery_brew_brew_sheet_path(@brewery, @brew, brew_sheet) %></td>
+  <td class="left_justify"><%= link_to brew_sheet.name, brewery_brew_brew_sheet_path(@brewery, @brew, brew_sheet) %></td>
+  <td class="left_justify"><%= brew_sheet.brewer %></td>
+  <td class="right_justify"><%= brew_sheet.mash_temperature_celsius %></td>
+  <td class="right_justify"><%= brew_sheet.boil_time_minutes %></td>
+  <td class="right_justify"><%= brew_sheet.original_gravity %></td>
+  <td class="right_justify"><%= brew_sheet.final_gravity %></td>
+  <td class="right_justify"><%= brew_sheet.fermentation_volume_litres %></td>
   <td>
     <% if can? :destroy, brew_sheet %>
         <%= link_to 'x', [brew_sheet.brew.brewery, brew_sheet.brew, brew_sheet], :confirm => 'Are you sure?', :method => :delete %>
