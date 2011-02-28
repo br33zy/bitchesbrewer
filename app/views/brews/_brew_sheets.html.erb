@@ -3,13 +3,15 @@
 <table>
   <thead>
   <tr class="bottom">
-    <th>brew_date</th>
-    <th>name</th>
-    <th>mash temp</th>
+    <th>Date</th>
+    <th>Name</th>
+    <th>Brewer</th>
+    <th>Mash temp.</th>
+    <th>Boil time</th>
     <th>OG</th>
     <th>FG</th>
-    <th>fermentation volume</th>
-    <th>boil time</th>
+    <th>Fermentation volume</th>
+    <th></th>
   </tr>
   </thead>
   <% @brew.brew_sheets.sort!{|a,b| b.brew_date <=> a.brew_date}.each do |brew_sheet| %>

@@ -38,6 +38,7 @@ class BrewSheetsController < ApplicationController
   # POST /brew_sheets.xml
   def create
     @brew_sheet = @brew.brew_sheets.create(params[:brew_sheet])
+    @brew_sheet.populate_from_parent_brew
 
     redirect_to brewery_brew_brew_sheet_path(@brewery, @brew, @brew_sheet)
   end
@@ -61,9 +62,6 @@ class BrewSheetsController < ApplicationController
   def destroy
     @brew_sheet.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(brew_sheets_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to brewery_brew_path(@brewery, @brew)
   end
 end
