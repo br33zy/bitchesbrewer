@@ -6,7 +6,7 @@
   <div class="span-18 last">
     <%= render "notes" unless @brew.notes.blank? %>
   </div>
-  <hr />
+  <hr/>
   <p id="notice"><%= notice %></p>
 
   <div class="span-6 colborder">
@@ -21,8 +21,8 @@
         <COL align="char" char=".">
         <tbody>
         <tr>
-          <th>Boil time minutes:</th>
-          <td><%= link_to_if(can?(:edit, @brew), @brew.boil_time_minutes, edit_brewery_brew_path(@brew.brewery, @brew)) %></td>
+          <th>Mash temperature:</th>
+          <td><%= link_to_if(can?(:edit, @brew), @brew.mash_temperature_celsius, edit_brewery_brew_path(@brew.brewery, @brew)) %></td>
         </tr>
         <tr>
           <th>Mash-In volume litres:</th>
@@ -33,8 +33,12 @@
           <td class="calc"><%= number_with_precision(@brew.mash_out_volume_litres, :precision => 2) %></td>
         </tr>
         <tr>
-          <th>Post-Boil volume litres:</th>
-          <td class="calc"><%= number_with_precision(@brew.post_boil_volume_litres, :precision => 2) %></td>
+        <tr>
+          <th>Boil time minutes:</th>
+          <td><%= link_to_if(can?(:edit, @brew), @brew.boil_time_minutes, edit_brewery_brew_path(@brew.brewery, @brew)) %></td>
+        </tr>
+        <th>Post-Boil volume litres:</th>
+        <td class="calc"><%= number_with_precision(@brew.post_boil_volume_litres, :precision => 2) %></td>
         </tr>
         <tr class="bottom">
           <th>Fermentation volume litres:</th>

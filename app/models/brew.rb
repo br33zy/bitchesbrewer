@@ -10,8 +10,9 @@ class Brew < ActiveRecord::Base
   validates :final_gravity,              :presence => true, :numericality => {:less_than => :original_gravity}
   validates :fermentation_volume_litres, :presence => true, :numericality => true
   validates :boil_time_minutes,          :presence => true, :numericality => true
+  validates :mash_temperature_celsius,   :presence => true, :numericality => {:less_than => 100}
 
-  validates_associated :brewery, :fermentables, :hop_additions, :brewsheets
+  validates_associated :brewery, :fermentables, :hop_additions, :brew_sheets
 
   def mash_efficiency_percentage
     self.brewery.mash_efficiency_percentage
