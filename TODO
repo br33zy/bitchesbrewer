@@ -9,6 +9,7 @@
           temperature_degrees_celsius:float gravity_points:float reading_date_time:date brew_sheet:references
     * add route nesting
     * integrate
+* Add mash temp to Brew.
 
 == Words
 Recipe: A standalone brewing recipe.
@@ -39,7 +40,6 @@ Brew Sheet: An instance of the recipe on brew day. Allowing actual brewday calcs
 * Add fermentables
 
 == TODO
-* Add mash temp to Brew.
 * Brew Clock
   * Recipe based alerts (mash times, hop additions, flame out)
 * Arduino integration
