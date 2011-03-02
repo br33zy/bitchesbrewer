@@ -36,6 +36,11 @@
 </p>
 
 <p>
+  <b>Est. ABV%:</b>
+  <%= number_with_precision(@brew_sheet.alcohol_by_volume, :precision => 1) %>%
+</p>
+
+<p>
   <b>Fermentation volume litres:</b>
   <%= @brew_sheet.fermentation_volume_litres %>
 </p>

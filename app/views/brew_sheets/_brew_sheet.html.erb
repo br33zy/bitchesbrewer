@@ -6,6 +6,7 @@
   <td class="right_justify"><%= brew_sheet.boil_time_minutes %></td>
   <td class="right_justify"><%= brew_sheet.original_gravity %></td>
   <td class="right_justify"><%= brew_sheet.final_gravity %></td>
+  <td class="right_justify"><%= number_with_precision(brew_sheet.alcohol_by_volume, :precision => 1) %></td>
   <td class="right_justify"><%= brew_sheet.fermentation_volume_litres %></td>
   <td>
     <% if can? :destroy, brew_sheet %>

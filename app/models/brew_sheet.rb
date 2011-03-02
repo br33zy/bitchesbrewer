@@ -1,5 +1,6 @@
 class BrewSheet < ActiveRecord::Base
   belongs_to :brew
+  acts_as_brew_recipe
 
   def populate_from_parent_brew
     %w(

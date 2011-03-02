@@ -40,6 +40,7 @@ Brew Sheet: An instance of the recipe on brew day. Allowing actual brewday calcs
 * Add fermentables
 
 == TODO
+* Decouple Zymurgy::Brew and friends??
 * Brew Clock
   * Recipe based alerts (mash times, hop additions, flame out)
 * Arduino integration
