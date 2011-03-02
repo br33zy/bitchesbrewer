@@ -1,58 +1,75 @@
 <div class="span-19" id="content">
   <h2 class="prepend-5 prepend-top"><%= @brew_sheet.name %></h2>
 
-  <blockquote>A beer-style by <%= @brew_sheet.brewer %></blockquote>
+  <blockquote>A beer-style brewed by <%= @brew_sheet.brewer %>
+    , <%= @brew_sheet.brew_date.strftime('%Y-%m-%d') %></blockquote>
   <blockquote><%= @brew_sheet.notes %></blockquote>
 
   <p id="notice"><%= notice %></p>
 
-  <ol>
-  <li>
-    <b>Brew date:</b>
-    <%= @brew_sheet.brew_date.strftime('%Y-%m-%d') %>
-  </li>
+  <table class="fix-align-char">
+    <col>
+    <col align="char" char=".">
+    <col align="char" char=".">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Recipe</th>
+      <th>Actual</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Mash temperature celsius:</td>
+      <td><%= @brew.mash_temperature_celsius %></td>
+      <td><%= @brew_sheet.mash_temperature_celsius %></td>
+    </tr>
 
-  <li>
-    <b>Mash temperature celsius:</b>
-    <%= @brew_sheet.mash_temperature_celsius %>
-  </li>
+    <tr>
+      <td>Boil time minutes:</td>
+      <td><%= @brew.boil_time_minutes %></td>
+      <td><%= @brew_sheet.boil_time_minutes %></td>
+    </tr>
 
-  <li>
-    <b>Pitching temperature celsius:</b>
-    <%= @brew_sheet.pitching_temperature_celsius %>
-  </li>
+    <tr>
+      <td>Achieved efficiency percentage:</td>
+      <td><%= @brewery.mash_efficiency_percentage %></td>
+      <td><%= @brew_sheet.achieved_efficiency_percentage %></td>
+    </tr>
 
-  <li>
-    <b>Original gravity:</b>
-    <%= @brew_sheet.original_gravity %>
-  </li>
+    <tr>
+      <td>Pitching temperature celsius:</td>
+      <td></td>
+      <td><%= @brew_sheet.pitching_temperature_celsius %></td>
+    </tr>
 
-  <li>
-    <b>Final gravity:</b>
-    <%= @brew_sheet.final_gravity %>
-  </li>
+    <tr>
+      <td>Original gravity:</td>
+      <td><%= @brew.original_gravity %></td>
+      <td><%= @brew_sheet.original_gravity %></td>
+    </tr>
 
-  <li>
-    <b>Est. ABV%:</b>
-    <%= number_with_precision(@brew_sheet.alcohol_by_volume, :precision => 1) %>%
-  </li>
+    <tr>
+      <td>Final gravity:</td>
+      <td><%= @brew.final_gravity %></td>
+      <td><%= @brew_sheet.final_gravity %></td>
+    </tr>
 
-  <li>
-    <b>Fermentation volume litres:</b>
-    <%= @brew_sheet.fermentation_volume_litres %>
-  </li>
+    <tr>
+      <td>Est. ABV%:</td>
+      <td><%= number_with_precision(@brew.alcohol_by_volume, :precision => 1) %>%</td>
+      <td><%= number_with_precision(@brew_sheet.alcohol_by_volume, :precision => 1) %>%</td>
+    </tr>
 
-  <li>
-    <b>Boil time minutes:</b>
-    <%= @brew_sheet.boil_time_minutes %>
-  </li>
-
-  <li>
-    <b>Achieved efficiency percentage:</b>
-    <%= @brew_sheet.achieved_efficiency_percentage %>
-  </li>
+    <tr>
+      <td>Fermentation volume litres:</td>
+      <td><%= @brew.fermentation_volume_litres %></td>
+      <td><%= @brew_sheet.fermentation_volume_litres %></td>
+    </tr>
+    </tbody>
+  </table>
 
   <%= link_to 'Edit', edit_brewery_brew_brew_sheet_path(@brewery, @brew, @brew_sheet) %> |
   <%= link_to 'Back', brewery_brew_path(@brewery, @brew) %>
-  </ol>
+
 </div>

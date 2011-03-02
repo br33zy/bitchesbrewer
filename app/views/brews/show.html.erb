@@ -33,12 +33,12 @@
           <td class="calc"><%= number_with_precision(@brew.mash_out_volume_litres, :precision => 2) %></td>
         </tr>
         <tr>
-        <tr>
           <th>Boil time minutes:</th>
           <td><%= link_to_if(can?(:edit, @brew), @brew.boil_time_minutes, edit_brewery_brew_path(@brew.brewery, @brew)) %></td>
         </tr>
-        <th>Post-Boil volume litres:</th>
-        <td class="calc"><%= number_with_precision(@brew.post_boil_volume_litres, :precision => 2) %></td>
+        <tr>
+          <th>Post-Boil volume litres:</th>
+          <td class="calc"><%= number_with_precision(@brew.post_boil_volume_litres, :precision => 2) %></td>
         </tr>
         <tr class="bottom">
           <th>Fermentation volume litres:</th>
