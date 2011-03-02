@@ -27,6 +27,7 @@
                       ;
                       var leftPart, rightPart, parts;
                       for (var i = 0, trs = tables[tableCounter].rows; i < trs.length; i++) {
+                          /* Perhaps get children of row rather than tds so that I can still use th */
                           for (var j = 0, tds = trs[i].getElementsByTagName('td'); j < tds.length; j++) {
                               if (fCols[j]) {
                                   if (tds[j].innerHTML.indexOf(fCols[j]) != -1) {
@@ -64,9 +65,6 @@
                   ;
               }
               ;
-              // This is ugly and should be improved (amongst other parts of the code ;)
-              var styleText = '<style type="text/css">.fix-align-char td.char-align { width: ' + (leftWidth + rightWidth) + 'px; }\n.fix-align-char span.left { float: left; text-align: right; width: ' + (leftWidth) + 'px; }\n.fix-align-char span.currency { text-align: left; float: left; }\n.fix-align-char span.right { float: right; text-align: left; width: ' + rightWidth + 'px; }</style>';
-              document.body.innerHTML += styleText;
           };
       }
       ;

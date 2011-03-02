@@ -428,3 +428,9 @@ ul.hmenu {
 ul.hmenu li {
   display: inline;
 }
+
+/* Styling for aligned decimal tables */
+.fix-align-char td.char-align { width: 45px; }
+.fix-align-char span.left  { float: left; text-align: right; width: 25px; }
+.fix-align-char span.right { float: right; text-align: left; width: 20px; }
+.fix-align-char span.currency { text-align: left; float: left; }
