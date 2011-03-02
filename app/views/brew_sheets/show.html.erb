@@ -1,66 +1,58 @@
-<p id="notice"><%= notice %></p>
+<div class="span-19" id="content">
+  <h2 class="prepend-5 prepend-top"><%= @brew_sheet.name %></h2>
 
-<p>
-  <b>Name:</b>
-  <%= @brew_sheet.name %>
-</p>
+  <blockquote>A beer-style by <%= @brew_sheet.brewer %></blockquote>
+  <blockquote><%= @brew_sheet.notes %></blockquote>
 
-<p>
-  <b>Brew date:</b>
-  <%= @brew_sheet.brew_date.strftime('%Y-%m-%d') %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Brewer:</b>
-  <%= @brew_sheet.brewer %>
-</p>
+  <ol>
+  <li>
+    <b>Brew date:</b>
+    <%= @brew_sheet.brew_date.strftime('%Y-%m-%d') %>
+  </li>
 
-<p>
-  <b>Mash temperature celsius:</b>
-  <%= @brew_sheet.mash_temperature_celsius %>
-</p>
+  <li>
+    <b>Mash temperature celsius:</b>
+    <%= @brew_sheet.mash_temperature_celsius %>
+  </li>
 
-<p>
-  <b>Pitching temperature celsius:</b>
-  <%= @brew_sheet.pitching_temperature_celsius %>
-</p>
+  <li>
+    <b>Pitching temperature celsius:</b>
+    <%= @brew_sheet.pitching_temperature_celsius %>
+  </li>
 
-<p>
-  <b>Original gravity:</b>
-  <%= @brew_sheet.original_gravity %>
-</p>
+  <li>
+    <b>Original gravity:</b>
+    <%= @brew_sheet.original_gravity %>
+  </li>
 
-<p>
-  <b>Final gravity:</b>
-  <%= @brew_sheet.final_gravity %>
-</p>
+  <li>
+    <b>Final gravity:</b>
+    <%= @brew_sheet.final_gravity %>
+  </li>
 
-<p>
-  <b>Est. ABV%:</b>
-  <%= number_with_precision(@brew_sheet.alcohol_by_volume, :precision => 1) %>%
-</p>
+  <li>
+    <b>Est. ABV%:</b>
+    <%= number_with_precision(@brew_sheet.alcohol_by_volume, :precision => 1) %>%
+  </li>
 
-<p>
-  <b>Fermentation volume litres:</b>
-  <%= @brew_sheet.fermentation_volume_litres %>
-</p>
+  <li>
+    <b>Fermentation volume litres:</b>
+    <%= @brew_sheet.fermentation_volume_litres %>
+  </li>
 
-<p>
-  <b>Boil time minutes:</b>
-  <%= @brew_sheet.boil_time_minutes %>
-</p>
+  <li>
+    <b>Boil time minutes:</b>
+    <%= @brew_sheet.boil_time_minutes %>
+  </li>
 
-<p>
-  <b>Achieved efficiency percentage:</b>
-  <%= @brew_sheet.achieved_efficiency_percentage %>
-</p>
+  <li>
+    <b>Achieved efficiency percentage:</b>
+    <%= @brew_sheet.achieved_efficiency_percentage %>
+  </li>
 
-
-<p>
-  <b>Notes:</b>
-  <%= @brew_sheet.notes %>
-</p>
-
-
-<%= link_to 'Edit', edit_brewery_brew_brew_sheet_path(@brewery, @brew, @brew_sheet) %> |
-<%= link_to 'Back', brewery_brew_path(@brewery, @brew) %>
+  <%= link_to 'Edit', edit_brewery_brew_brew_sheet_path(@brewery, @brew, @brew_sheet) %> |
+  <%= link_to 'Back', brewery_brew_path(@brewery, @brew) %>
+  </ol>
+</div>
