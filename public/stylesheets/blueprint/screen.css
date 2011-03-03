@@ -295,10 +295,15 @@ margin-right: 0.5em;
 text-align: right;
 }
 
-p.notes {
+p.notes,
+p.brew_sheet_notes {
   color:#363;
   line-height: 1em;
   margin: 0.8em 0.2em;
+}
+
+p.brew_sheet_notes {
+  color:#666;
 }
 
 
@@ -415,6 +420,10 @@ tr.total {
 .indent {
     padding-left:2em;
     padding-right:2em
+}
+
+.brew_sheet tbody th {
+    text-align: right
 }
 
 /* Styling for signin signout */

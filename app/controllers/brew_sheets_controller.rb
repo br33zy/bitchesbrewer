@@ -48,7 +48,7 @@ class BrewSheetsController < ApplicationController
   def update
     respond_to do |format|
       if @brew_sheet.update_attributes(params[:brew_sheet])
-        format.html { redirect_to(@brew_sheet, :notice => 'Brew sheet was successfully updated.') }
+        format.html { redirect_to(edit_brewery_brew_brew_sheet_path(@brewery, @brew, @brew_sheet), :notice => 'Brew sheet was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

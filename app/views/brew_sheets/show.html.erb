@@ -3,11 +3,11 @@
 
   <blockquote>A beer-style brewed by <%= @brew_sheet.brewer %>
     , <%= @brew_sheet.brew_date.strftime('%Y-%m-%d') %></blockquote>
-  <blockquote><%= @brew_sheet.notes %></blockquote>
+  <blockquote><%= render "notes" unless @brew_sheet.notes.blank? %></blockquote>
 
   <p id="notice"><%= notice %></p>
 
-  <table class="fix-align-char">
+  <table class="brew_sheet fix-align-char">
     <col>
     <col align="char" char=".">
     <col align="char" char=".">

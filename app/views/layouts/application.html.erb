@@ -28,7 +28,7 @@
                       var leftPart, rightPart, parts;
                       for (var i = 0, trs = tables[tableCounter].rows; i < trs.length; i++) {
                           /* Perhaps get children of row rather than tds so that I can still use th */
-                          for (var j = 0, tds = trs[i].getElementsByTagName('td'); j < tds.length; j++) {
+                          for (var j = 0, tds = trs[i].getElementsByTagName('*'); j < tds.length; j++) {
                               if (fCols[j]) {
                                   if (tds[j].innerHTML.indexOf(fCols[j]) != -1) {
                                       parts = tds[j].innerHTML.split(fCols[j]);
