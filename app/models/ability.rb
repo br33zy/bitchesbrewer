@@ -10,5 +10,10 @@ class Ability
     can :manage, BrewSheet,   :brew => { :brewery => { :user_id => user.id }}
     can :read, :all
 
+    if user && user.admin?
+      can :access, :rails_admin
+      can :manage, :all
+    end
+
   end
 end
