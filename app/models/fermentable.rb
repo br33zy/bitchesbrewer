@@ -2,6 +2,10 @@ class Fermentable < ActiveRecord::Base
   acts_as_fermentable
   belongs_to :brew
 
+  validates :name, :presence => true
+  validates :points_per_kg_per_litre, :presence => true, :numericality => {:greater_than => 0}
+  validates :weight_in_kg, :presence => true, :numericality => {:greater_than => 0}
+
   def mash_out_volume_litres
     self.brew.mash_out_volume_litres
   end

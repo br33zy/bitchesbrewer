@@ -30,15 +30,7 @@ class HopAdditionsController < ApplicationController
   def create
     @hop_addition = @brew.hop_additions.create(params[:hop_addition])
 
-    respond_to do |format|
-      if @hop_addition.save
-        format.html { redirect_to(brewery_brew_path(@brewery, @brew), :notice => 'Hop addition was successfully created.') }
-        format.xml  { render :xml => @hop_addition, :status => :created, :location => @hop_addition }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @hop_addition.errors, :status => :unprocessable_entity }
-      end
-    end
+    redirect_to brewery_brew_path(@brewery, @brew)
   end
 
   def update
